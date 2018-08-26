@@ -87,10 +87,16 @@
 <meta property="og:site_name" content="TaylorLiang&#39;s Blog">
 <meta property="og:description" content="最近更换了笔记本，由原来的用了多年的Windows换成mac，需要将hexo重新部署到新的mac上，下面说一下步骤和部署过程中遇到的问题以及解决方案。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-26T02:32:38.432Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/1.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/2.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/3.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/4.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/5.jpeg">
+<meta property="og:updated_time" content="2018-08-26T04:24:34.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo GitHub pages Windows to Mac">
 <meta name="twitter:description" content="最近更换了笔记本，由原来的用了多年的Windows换成mac，需要将hexo重新部署到新的mac上，下面说一下步骤和部署过程中遇到的问题以及解决方案。">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/26/hexo-mac/1.jpeg">
 
 
 
@@ -308,7 +314,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-08-26T10:32:38+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2018-08-26T12:24:34+08:00">
                 2018-08-26
               </time>
             
@@ -370,7 +376,7 @@
 
       
         <p>最近更换了笔记本，由原来的用了多年的Windows换成mac，需要将hexo重新部署到新的mac上，下面说一下步骤和部署过程中遇到的问题以及解决方案。<br><a id="more"></a></p>
-<h1 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h1><p>Mac OS X自带Git，无需安装Git，在Mac Terminal中输入<code>git --version</code>可以查看git版本</p>
+<h1 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h1><p>Mac OS X自带Git，无需安装Git，在Mac Terminal中输入<code>git --version</code>可以查看git版本<br><img src="/2018/08/26/hexo-mac/1.jpeg" alt=""></p>
 <h1 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h1><p>Node.js可以直接去<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js官网</a>下载。node.js 安装完成以后，npm 也被安装完成，简化了工作。检测安装是否成功，可以在 Mac terminal 中输入以下命令查看 node.js 和 npm 的版本号：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 <h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>Git、Node.js 和 npm 安装完成以后，接下来就可以安装 Hexo 了。在 Mac terminal 中输入以下命令即可执行安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure></p>
@@ -383,9 +389,13 @@
 <h1 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h1><p>启动hexo server：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
 <p>or<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
 <p>默认情况下是在<code>http://localhost:4000/</code>中查看本地页面效果的。</p>
-<h1 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h1><p>以上的操作仅仅是在本地完成了部署，还需要将生成的静态页面部署到github上。鉴于我是从windows转到mac到，因此我之前已经有github账号并且已经为我的blog创建了专门店repository，将mac上生成的ssh公钥id_rsa.pub复制到github的ssh上，如果mac还没有ssh则创建一个。</p>
-<h2 id="安装git部署器"><a href="#安装git部署器" class="headerlink" title="安装git部署器"></a>安装git部署器</h2><p>这里的git部署器和git还不一样，前面不是说过git是mac自带的不需要安装的吗，而这里的git部署器是将项目部署到github上必须的，可以通过git安装的东西，在Mac Terminal中执行以下命令进行安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure></p>
-<p><strong>推荐阅读</strong><br><a href="http://lijiankun24.com/Mac下Hexo和GitHub-Pages搭建个人博客1/" target="_blank" rel="noopener">Mac 下 Hexo 和 GitHub-Pages 搭建个人博客（一）– 一些无处安放到代码和故事</a><br><a href="https://madongqiang2201.github.io/2016/07/21/Mac下Hexo＋github-pages搭建静态博客/" target="_blank" rel="noopener">Mac搭建Hexo博客及NexT主题配置优化 – 小马哥Mark的博客</a></p>
+<h1 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h1><p>以上的操作仅仅是在本地完成了部署，还需要将生成的静态页面部署到github上。鉴于我是从windows转到mac到，因此我之前已经有github账号并且已经为我的blog创建了专门店repository，将mac上生成的ssh公钥id_rsa.pub复制到github的ssh上，如果mac还没有ssh则创建一个。<br><img src="/2018/08/26/hexo-mac/2.jpeg" alt=""></p>
+<h2 id="安装git部署器"><a href="#安装git部署器" class="headerlink" title="安装git部署器"></a>安装git部署器</h2><p>这里的git部署器和git还不一样，前面不是说过git是mac自带的不需要安装的吗，而这里的git部署器是将项目部署到github上必须的，如果还没安装git部署器就执行<code>hexo d</code>会报错，在Mac Terminal中执行以下命令进行安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure></p>
+<h2 id="部署到github上-1"><a href="#部署到github上-1" class="headerlink" title="部署到github上"></a>部署到github上</h2><p>执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>我遇到的问题是<code>unable to auto-detect email address</code>，错误如下图所示<br><img src="/2018/08/26/hexo-mac/3.jpeg" alt=""><br>于是我用<code>git config</code>重新设置了一下user.name和user.email，重新deploy后就可以了。<br><img src="/2018/08/26/hexo-mac/4.jpeg" alt=""></p>
+<h1 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h1><p>部署完成并且<code>hexo server</code>后发现文章里面的图片无法正常显示，用浏览器的开发者工具（网页检查器）检查后发现图片链接不正确，后来才想起之前在Windows部署的时候采用了相对路径的方式，具体设置是将post_asset_folder设为true，这样的话当你<code>hexo new post &quot;title&quot;</code>的时候在<code>/source/_post/</code>文件夹下就会生成相应的“title.md”以及“title”文件夹，“title”文件夹可用于存放这篇文章需要用到的图片。<br><img src="/2018/08/26/hexo-mac/5.jpeg" alt=""></p>
+<p><strong>推荐阅读</strong><br><a href="http://lijiankun24.com/Mac下Hexo和GitHub-Pages搭建个人博客1/" target="_blank" rel="noopener">Mac 下 Hexo 和 GitHub-Pages 搭建个人博客（一）– 一些无处安放到代码和故事</a><br><a href="https://madongqiang2201.github.io/2016/07/21/Mac下Hexo＋github-pages搭建静态博客/" target="_blank" rel="noopener">Mac搭建Hexo博客及NexT主题配置优化 – 小马哥Mark的博客</a><br><a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">hexo博客图片问题 – 简书</a><br><a href="https://www.jianshu.com/p/6505ead00d59" target="_blank" rel="noopener">一篇文章带你玩转Mac Finder – 简书</a><br><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html" target="_blank" rel="noopener">打造个性超赞博客Hexo+NexT+GitHubPages的超深度优化 – reuixiy</a></p>
 
       
     </div>
@@ -579,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装node-js"><span class="nav-number">2.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化hexo"><span class="nav-number">4.</span> <span class="nav-text">初始化hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装依赖"><span class="nav-number">5.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试hexo可不可用"><span class="nav-number">6.</span> <span class="nav-text">测试hexo可不可用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动服务"><span class="nav-number">7.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到github上"><span class="nav-number">8.</span> <span class="nav-text">部署到github上</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git部署器"><span class="nav-number">8.1.</span> <span class="nav-text">安装git部署器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装node-js"><span class="nav-number">2.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化hexo"><span class="nav-number">4.</span> <span class="nav-text">初始化hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装依赖"><span class="nav-number">5.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试hexo可不可用"><span class="nav-number">6.</span> <span class="nav-text">测试hexo可不可用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动服务"><span class="nav-number">7.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到github上"><span class="nav-number">8.</span> <span class="nav-text">部署到github上</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git部署器"><span class="nav-number">8.1.</span> <span class="nav-text">安装git部署器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到github上-1"><span class="nav-number">8.2.</span> <span class="nav-text">部署到github上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他问题"><span class="nav-number">9.</span> <span class="nav-text">其他问题</span></a></li></ol></div>
             
 
           </div>
