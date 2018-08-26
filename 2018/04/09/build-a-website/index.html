@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="taylorliang,博客,blog,liangmanping" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="从建站者的角度来看，网站可以分为个人网站和企业网站。 个人为什么要建设网站？个人网站有点类似于个人博客，可以在自己的网站上发布日志，俗话有言，好记性不如烂笔头，个人认为将自己的工作和学习记录下来是一个好习惯。自己建设的个人网站可以根据自己的个人喜好修改样式和排版，还能自由地给网站添加功能，简直是热爱折腾的程序员的福音啊，DIY起来比CSDN、博客园、简书等寄托型博客好看多了。更重要的一点时，对于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈网站建设">
+<meta property="og:url" content="http://yoursite.com/2018/04/09/build-a-website/index.html">
+<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
+<meta property="og:description" content="从建站者的角度来看，网站可以分为个人网站和企业网站。 个人为什么要建设网站？个人网站有点类似于个人博客，可以在自己的网站上发布日志，俗话有言，好记性不如烂笔头，个人认为将自己的工作和学习记录下来是一个好习惯。自己建设的个人网站可以根据自己的个人喜好修改样式和排版，还能自由地给网站添加功能，简直是热爱折腾的程序员的福音啊，DIY起来比CSDN、博客园、简书等寄托型博客好看多了。更重要的一点时，对于">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/04/09/build-a-website/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/04/09/build-a-website/3.png">
+<meta property="og:updated_time" content="2018-04-09T04:30:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈网站建设">
+<meta name="twitter:description" content="从建站者的角度来看，网站可以分为个人网站和企业网站。 个人为什么要建设网站？个人网站有点类似于个人博客，可以在自己的网站上发布日志，俗话有言，好记性不如烂笔头，个人认为将自己的工作和学习记录下来是一个好习惯。自己建设的个人网站可以根据自己的个人喜好修改样式和排版，还能自由地给网站添加功能，简直是热爱折腾的程序员的福音啊，DIY起来比CSDN、博客园、简书等寄托型博客好看多了。更重要的一点时，对于">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/09/build-a-website/2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/09/build-a-website/"/>
+
+
+
+
+
+  <title>浅谈网站建设 | TaylorLiang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TaylorLiang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/build-a-website/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Taylor Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TaylorLiang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">浅谈网站建设</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T11:20:55+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-04-09T12:30:26+08:00">
+                2018-04-09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/04/09/build-a-website/2.jpg" alt=""></p>
+<p>从建站者的角度来看，网站可以分为个人网站和企业网站。</p>
+<p>个人为什么要建设网站？个人网站有点类似于个人博客，可以在自己的网站上发布日志，俗话有言，好记性不如烂笔头，个人认为将自己的工作和学习记录下来是一个好习惯。自己建设的个人网站可以根据自己的个人喜好修改样式和排版，还能自由地给网站添加功能，简直是热爱折腾的程序员的福音啊，DIY起来比CSDN、博客园、简书等寄托型博客好看多了。更重要的一点时，对于我们应届生以及刚出来社会工作时间不长的小伙伴来说，还能给我们的工作简历增添不少加分点，面试官一看你的简历就能大概知道你掌握什么技术。</p>
+<p>企业为什么要建设网站呢？首先，企业建设网站是为了展示企业形象，强调自己的企业实力，现在找工作的人都知道要先百度一下/google一下，看看这个公司是否有官方网站，是否是骗子公司，如果没有，你觉得人家敢相信你吗？客户敢信任你吗？<a id="more"></a></p>
+<h1 id="网站构成"><a href="#网站构成" class="headerlink" title="网站构成"></a>网站构成</h1><p>网站主要有三个部分组成，域名+服务器+网站设计制作+后期维护和更新。</p>
+<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>域名，也就是网址，需要单独购买和备案，域名价格高低不等，便宜有时候阿里云搞活动1块钱首年的域名也有，身为穷学生的我们可以多留意阿里云腾讯云的云解析优惠活动。域名一般都是首年比较便宜，过了第一年想要续费价格就开始飙升了。贵的域名，价格可以高到几万甚至几十万。</p>
+<p><img src="/2018/04/09/build-a-website/3.png" alt=""></p>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>服务器，用于存储发布的代码文件、文字、图片、视频等资料，个人建站如果嫌购买服务器太贵可以将项目文件寄存到github或者国内的coding.net，这样做的缺点是，你的代码是开源的，别人可以轻松地获取你的网站的源代码。企业建站可以说是必须购买服务器的，这是一笔固定开销，逃不了的。小型公司做一个展示性的官方网站，用到的存储空间应该不需要太大，买个1G的服务器就绰绰有余了。</p>
+<h2 id="网站设计制作。"><a href="#网站设计制作。" class="headerlink" title="网站设计制作。"></a>网站设计制作。</h2><p>网站制作可大致分为两类，网页版和后台版。</p>
+<p>网页版，也就是多个静态html加上js交互构成的网站，用于展示企业文化、产品、服务等相关信息，具体包括文字介绍、图片展示、地理位置、官方网址、团队成员、联系方式等信息。一个刚起步或者规模较小的公司，做一个这样的静态网站就足够了，开发人员用心做的话完全可以做得非常好看的。这样的网站优点是开发成本较低，周期较短，但是不易后期维护和内容更新，如果以后需要改动网站或者更新内容还需要麻烦开发者来亲自操刀。</p>
+<p>后台版，也就是可以实现前后端数据交互的网站，通常会涉及到数据库，逻辑较为复杂，开发成本较高，开发周期长，如果做得好的话后期维护甚至不需要程序员更改代码文件，相当于一个独立的网站系统（想想都觉得工作量超级大哈哈）。</p>
+<h2 id="后期维护与更新"><a href="#后期维护与更新" class="headerlink" title="后期维护与更新"></a>后期维护与更新</h2><p>网站不是一次性制作完就ok了，你还得考虑后边的维护、升级。</p>
+<h1 id="建站步骤"><a href="#建站步骤" class="headerlink" title="建站步骤"></a>建站步骤</h1><ol>
+<li><p>明确企业网站建设的目的，理解企业为什么要建立这个网站，需要这个网站实现怎么样的一个功能或价值，比如：宣传企业形象、推广企业产品等。</p>
+</li>
+<li><p>域名规划，也就是给网站设计一个域名，域名一般与公司名称有直接关系，简短、易于记忆。查询和购买域名。</p>
+</li>
+<li><p>服务器购买。</p>
+</li>
+<li><p>网站设计。主题风格，具体需要实现什么功能。</p>
+</li>
+<li><p>网站架构。有点像书本/论文的目录</p>
+</li>
+<li><p>网站维护。SEO、网站更新等。</p>
+</li>
+</ol>
+<h1 id="What-the-company-may-want-to-know-about"><a href="#What-the-company-may-want-to-know-about" class="headerlink" title="What the company may want to know about:"></a>What the company may want to know about:</h1><ol>
+<li><p>Why do the company need a official website</p>
+</li>
+<li><p>How to build a website technically.<br> 网站建设需要：域名、服务器/虚拟空间、具体代码编写、后期维护和更新等</p>
+</li>
+<li><p>How much<br> Depends on the kind of website you need.<br> 静态网站（不带后台的），适用于作为简单的产品信息展示<br> 网站系统（带后台的），涉及数据库管理。</p>
+</li>
+<li><p>Time cost</p>
+</li>
+</ol>
+<h1 id="What-the-website-builder-need-to-know"><a href="#What-the-website-builder-need-to-know" class="headerlink" title="What the website builder need to know:"></a>What the website builder need to know:</h1><ol>
+<li><p>什么行业什么类型的公司</p>
+</li>
+<li><p>网站的主要功能（展示、推销等）</p>
+</li>
+<li><p>主要面向的人群</p>
+</li>
+<li><p>网站的具体功能</p>
+</li>
+<li><p>网站风格</p>
+</li>
+</ol>
+<h1 id="公司需要提供给网站建设人员的"><a href="#公司需要提供给网站建设人员的" class="headerlink" title="公司需要提供给网站建设人员的"></a>公司需要提供给网站建设人员的</h1><p>公司需要提供给网站建设人员的东西：具体需要展示的内容，如文字、图片等。</p>
+<h1 id="一般的公司官网架构"><a href="#一般的公司官网架构" class="headerlink" title="一般的公司官网架构"></a>一般的公司官网架构</h1><p>网站首页：关于公司的简介、团队简介、新闻中心等</p>
+<p>产品介绍：具体的产品展示</p>
+<p>联系我们：联系方式，地址，电话，传真，email等联系方式</p>
+<h1 id="软件生命周期"><a href="#软件生命周期" class="headerlink" title="软件生命周期"></a>软件生命周期</h1><ol>
+<li><p>需求分析</p>
+</li>
+<li><p>产品设计</p>
+</li>
+<li><p>具体实现</p>
+</li>
+<li><p>网站维护与后期更新</p>
+</li>
+</ol>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/19/numberSystemConversion/" rel="next" title="二进制、十进制、十六进制之间的转换">
+                <i class="fa fa-chevron-left"></i> 二进制、十进制、十六进制之间的转换
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/年级分享会--香港研究生申请经验分享/" rel="prev" title="年级分享会--香港研究生申请经验分享">
+                年级分享会--香港研究生申请经验分享 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTU5Ny84MTYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Taylor Liang" />
+            
+              <p class="site-author-name" itemprop="name">Taylor Liang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网站构成"><span class="nav-number">1.</span> <span class="nav-text">网站构成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#域名"><span class="nav-number">1.1.</span> <span class="nav-text">域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">1.2.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站设计制作。"><span class="nav-number">1.3.</span> <span class="nav-text">网站设计制作。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后期维护与更新"><span class="nav-number">1.4.</span> <span class="nav-text">后期维护与更新</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建站步骤"><span class="nav-number">2.</span> <span class="nav-text">建站步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-the-company-may-want-to-know-about"><span class="nav-number">3.</span> <span class="nav-text">What the company may want to know about:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-the-website-builder-need-to-know"><span class="nav-number">4.</span> <span class="nav-text">What the website builder need to know:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公司需要提供给网站建设人员的"><span class="nav-number">5.</span> <span class="nav-text">公司需要提供给网站建设人员的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一般的公司官网架构"><span class="nav-number">6.</span> <span class="nav-text">一般的公司官网架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件生命周期"><span class="nav-number">7.</span> <span class="nav-text">软件生命周期</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Taylor Liang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12548,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+
+  <!-- 页面背景图 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+  <script>
+    $("body").backstretch("http://taylorliang.top/images/background4.jpg");
+  </script>
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="taylorliang,博客,blog,liangmanping" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一个字节由8位组成。在二进制表示法中，它的值域是00000000(2)~11111111(2)；如果用十进制整数表示，它的值域就是0(10)~255(10)。两种表示法对于描述位模式来说都不是很方便，二进制表示法十分冗长，而十进制表示法与位模式的相互转化又非常麻烦。替代的方法是，以16位为基数，或者叫十六进制（hexadecimal）数，来表示位模式。十六进制（简写成“hex”）使用数字‘0’~‘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二进制、十进制、十六进制之间的转换">
+<meta property="og:url" content="http://yoursite.com/2018/03/19/numberSystemConversion/index.html">
+<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
+<meta property="og:description" content="一个字节由8位组成。在二进制表示法中，它的值域是00000000(2)~11111111(2)；如果用十进制整数表示，它的值域就是0(10)~255(10)。两种表示法对于描述位模式来说都不是很方便，二进制表示法十分冗长，而十进制表示法与位模式的相互转化又非常麻烦。替代的方法是，以16位为基数，或者叫十六进制（hexadecimal）数，来表示位模式。十六进制（简写成“hex”）使用数字‘0’~‘">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/03/19/numberSystemConversion/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/19/numberSystemConversion/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/19/numberSystemConversion/3.png">
+<meta property="og:updated_time" content="2018-03-19T16:00:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二进制、十进制、十六进制之间的转换">
+<meta name="twitter:description" content="一个字节由8位组成。在二进制表示法中，它的值域是00000000(2)~11111111(2)；如果用十进制整数表示，它的值域就是0(10)~255(10)。两种表示法对于描述位模式来说都不是很方便，二进制表示法十分冗长，而十进制表示法与位模式的相互转化又非常麻烦。替代的方法是，以16位为基数，或者叫十六进制（hexadecimal）数，来表示位模式。十六进制（简写成“hex”）使用数字‘0’~‘">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/19/numberSystemConversion/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/19/numberSystemConversion/"/>
+
+
+
+
+
+  <title>二进制、十进制、十六进制之间的转换 | TaylorLiang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TaylorLiang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/19/numberSystemConversion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Taylor Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TaylorLiang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">二进制、十进制、十六进制之间的转换</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-19T11:22:13+08:00">
+                2018-03-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-03-20T00:00:34+08:00">
+                2018-03-20
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一个字节由8位组成。在二进制表示法中，它的值域是00000000(2)~11111111(2)；如果用十进制整数表示，它的值域就是0(10)~255(10)。两种表示法对于描述位模式来说都不是很方便，二进制表示法十分冗长，而十进制表示法与位模式的相互转化又非常麻烦。替代的方法是，以16位为基数，或者叫十六进制（hexadecimal）数，来表示位模式。十六进制（简写成“hex”）使用数字‘0’~‘9’以及字符‘A’~‘F’来表示16个可能的值。下图展示了16个十六进制数字对应的十进制值和二进制值。用十六进制书写，一个字节的值域为00(16)~FF(16)。<a id="more"></a><br><img src="/2018/03/19/numberSystemConversion/1.png" alt=""></p>
+<p>在C语言中，以0x或者0X开头的数字常量被认为是十六进制的值。字符‘A’~‘F’既可以是大写，也可以是小写，甚至是大小写混合。</p>
+<p>编写机器级程序的一个很常见的任务就是在位模式的十进制、二进制和十六进制表示之间进行人工转换。</p>
+<h1 id="十六进制转二进制"><a href="#十六进制转二进制" class="headerlink" title="十六进制转二进制"></a>十六进制转二进制</h1><p>二进制与十六进制之间的转换较为简单直接，因为可以一次执行一个十六进制数字的转换。一个简单的窍门是，记住十六进制数字A、C、F相对应的十进制值。而对于把十六进制值B、D、E转换成十进制值时，可以通过计算它们与前三个值的相对关系来完成。</p>
+<p>例如，0x173A4C，转换成二进制格式，如下所示：<br><img src="/2018/03/19/numberSystemConversion/2.png" alt=""><br>于是就得到了二进制表示：0001 0111 0011 1010 0100 1100</p>
+<h1 id="二进制转十六进制"><a href="#二进制转十六进制" class="headerlink" title="二进制转十六进制"></a>二进制转十六进制</h1><p>如果给定一个二进制数字1111001010110110110011，我们可以先把它分为每四位一组，再把它转换为十六进制。要注意的是，如果位的总数不是4的倍数，则需要在最左边补零来凑齐四位。<br><img src="/2018/03/19/numberSystemConversion/3.png" alt=""><br>于是就得到了十六进制表示：0x3CADB3</p>
+<p>Tips:<br>当值x是2的非负整数n次幂时，也就是x=2^n，我们可以很容易地将x写成十六进制的形式，只要记得x的二进制表示就是在1后面跟n个0，而十六进制数字0代表4个二进制的0。因此，当n表示成i+4j的形式（其中0&lt;=i&lt;=3)时，我们可以把x写成开头的十六进制数字为1(i=0)、2(i=1)、4(i=2)或者8(i=3)，后面跟随j个十六进制的0。例如x=2048=2^11，即n=3+4*2，因此得到十六进制表示0x800，又如2^16表示成十六进制为0x10000，2^7表示成十六进制为0x80</p>
+<h1 id="十进制转十六进制"><a href="#十进制转十六进制" class="headerlink" title="十进制转十六进制"></a>十进制转十六进制</h1><p>将十进制数x转换成十六进制，可以反复地用16除x（也就是x除以16啦），得到一个商q和一个余数r，也就是<code>x=q*16+r</code>，然后用十六进制表示的r作为最低位数字（也就是最右边的位数），重复以上操作直至商为零。举个栗子，十进制数314156转换为十六进制：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">x=q*16+r</th>
+<th style="text-align:center">最低位数字(十六进制表示)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">314156 = 19634*16 + 12</td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">19634 = 1227*16 + 2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">1227 = 76*16 + 11</td>
+<td style="text-align:center">B</td>
+</tr>
+<tr>
+<td style="text-align:center">76 = 4*16 + 12</td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">4 = 0*16 + 4</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<p>因此十进制数314156表示成十六进制为0xC2BC4</p>
+<p>十进制转二进制方法同上。</p>
+<h1 id="十六进制转十进制"><a href="#十六进制转十进制" class="headerlink" title="十六进制转十进制"></a>十六进制转十进制</h1><p>用相应的16的幂乘以每个十六进制数字。比如0x7AF，计算十进制的过程为<code>7*16^2 + 10*16^1 + 15*16^0 = 1967</code>。</p>
+<p>二进制转十进制方法同上。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/19/deriveChromeExtension/" rel="next" title="如何导出Chrome扩展程序">
+                <i class="fa fa-chevron-left"></i> 如何导出Chrome扩展程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/09/build-a-website/" rel="prev" title="浅谈网站建设">
+                浅谈网站建设 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTU5Ny84MTYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Taylor Liang" />
+            
+              <p class="site-author-name" itemprop="name">Taylor Liang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#十六进制转二进制"><span class="nav-number">1.</span> <span class="nav-text">十六进制转二进制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二进制转十六进制"><span class="nav-number">2.</span> <span class="nav-text">二进制转十六进制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十进制转十六进制"><span class="nav-number">3.</span> <span class="nav-text">十进制转十六进制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十六进制转十进制"><span class="nav-number">4.</span> <span class="nav-text">十六进制转十进制</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Taylor Liang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12548,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+
+  <!-- 页面背景图 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+  <script>
+    $("body").backstretch("http://taylorliang.top/images/background4.jpg");
+  </script>
+</body>
+</html>

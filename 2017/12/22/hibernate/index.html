@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,Hibernate," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Hibernate是一个ORM框架，它对JDBC进行了轻量级的封装。通过使用Hibernate框架，开发人员可以以面向对象的思维方式来操作数据库。">
+<meta name="keywords" content="Java,Hibernate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate的配置和使用">
+<meta property="og:url" content="http://yoursite.com/2017/12/22/hibernate/index.html">
+<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
+<meta property="og:description" content="Hibernate是一个ORM框架，它对JDBC进行了轻量级的封装。通过使用Hibernate框架，开发人员可以以面向对象的思维方式来操作数据库。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/hibernate_logo.gif">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/downloadHibernate.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/UserLibraries.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/newUserLibrary.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/applyAndClose.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/newDynamicWebProject.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/buildPath.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/addUserLibrary.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/22/hibernate/addUserLibrary2.png">
+<meta property="og:updated_time" content="2018-01-02T16:47:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hibernate的配置和使用">
+<meta name="twitter:description" content="Hibernate是一个ORM框架，它对JDBC进行了轻量级的封装。通过使用Hibernate框架，开发人员可以以面向对象的思维方式来操作数据库。">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/22/hibernate/hibernate_logo.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/22/hibernate/"/>
+
+
+
+
+
+  <title>Hibernate的配置和使用 | TaylorLiang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TaylorLiang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/22/hibernate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Taylor Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TaylorLiang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Hibernate的配置和使用</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-22T11:44:29+08:00">
+                2017-12-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-01-03T00:47:36+08:00">
+                2018-01-03
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2017/12/22/hibernate/hibernate_logo.gif" alt=""><br>Hibernate是一个ORM框架，它对JDBC进行了轻量级的封装。通过使用Hibernate框架，开发人员可以以面向对象的思维方式来操作数据库。<a id="more"></a></p>
+<h1 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h1><p>ORM(Object-Relation Map, 对象关系映射)是一种为了解决面向对象编程过程中，程序与关系数据库交互而提出来的技术。ORM的原理是将对象与表、对象的属性与表的字段分别建立映射关系。例如，Java程序中有User这一对象，它含有username和password两个属性；数据库中有一个User表，该表含有username和password两个字段。通过“O-R映射”可以自由地通过操作对象来操作数据，而不用考虑数据在数据库中的存取问题。比较流行的ORM框架有：Hibernate, iBATIS/Mybatis, JPOX, Apache Torque, TopLink/EclipsLink等。本文主要介绍Hibernate的配置和使用。</p>
+<h1 id="Hibernate下载"><a href="#Hibernate下载" class="headerlink" title="Hibernate下载"></a>Hibernate下载</h1><p>Hibernate资源包下载地址：<a href="http://hibernate.org/orm/releases/" target="_blank" rel="noopener">http://hibernate.org/orm/releases/</a><br><img src="/2017/12/22/hibernate/downloadHibernate.png" alt="downloadHibernate.png"></p>
+<ul>
+<li>documentation: 存放Hibernate使用手册。</li>
+<li>lib: 存放Hibernate所有的运行库文件资源包，每一种资源包都存放在独立的子文件夹中，其中required子文件夹中的jar包是我们开发Hibernate项目所需的jar包。</li>
+<li>project: 存放Hibernate框架的源代码文件。</li>
+<li>changelog.txt: 改文件记录了所有Hibernate版本更新所做的变更说明。</li>
+<li>hibernate_logo.gif: Hibernate的logo。</li>
+<li>lgpl.txt: 使用hibernate的授权说明。</li>
+</ul>
+<h1 id="Hibernate配置和使用"><a href="#Hibernate配置和使用" class="headerlink" title="Hibernate配置和使用"></a>Hibernate配置和使用</h1><h2 id="新建User-Library"><a href="#新建User-Library" class="headerlink" title="新建User Library"></a>新建User Library</h2><p>为了今后更多的项目都能快速引用Hibernate的依赖库，我们可以在Eclipse中新建一个User Library，将Hibernate开发必须的jar包都加进去。<br>打开Eclipse JEE，执行以下步骤：<br>Window-&gt;Preferences-&gt;在左上方的搜索框中输入User-&gt;选择 Java | Build Path 节点下的User Library -&gt; 点击窗口右侧的New按钮<br><img src="/2017/12/22/hibernate/UserLibraries.jpg" alt=""><br>在New User Library对话框中输入library name，勾选System library(added to the boot class path)<br><img src="/2017/12/22/hibernate/newUserLibrary.png" alt=""><br>点击确定，回到Preferences对话框，点击右侧的Add External JARs…按钮，选择Hibernate的lib/required子文件夹中的所有JAR文件，Apply and Close，完成User Library创建。<br><img src="/2017/12/22/hibernate/applyAndClose.png" alt=""></p>
+<h2 id="在项目中引用User-Library"><a href="#在项目中引用User-Library" class="headerlink" title="在项目中引用User Library"></a>在项目中引用User Library</h2><p>创建好Hibernate的User Library后就可以在任意项目中引入Hibernate的依赖包了。<br>File-&gt;New-&gt;Dynamic Web Project<br><img src="/2017/12/22/hibernate/newDynamicWebProject.png" alt=""><br>右击项目名hibernateTest -&gt; Build Path -&gt; Configure Build Path…<br>切换到Libraries选项卡，可以看到如下图所示的信息。<br><img src="/2017/12/22/hibernate/buildPath.png" alt=""><br>点击右侧的Add Library，选择刚才新建的User Library<br><img src="/2017/12/22/hibernate/addUserLibrary.png" alt=""> <img src="/2017/12/22/hibernate/addUserLibrary2.png" alt=""></p>
+<h2 id="hibernate的使用"><a href="#hibernate的使用" class="headerlink" title="hibernate的使用"></a>hibernate的使用</h2><p><strong><em>未完待续。。。</em></strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Hibernate/" rel="tag"># Hibernate</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/21/struts2/" rel="next" title="Struts2 Eclipse">
+                <i class="fa fa-chevron-left"></i> Struts2 Eclipse
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/14/JapanTransportation/" rel="prev" title="浅谈日本城市交通管理">
+                浅谈日本城市交通管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTU5Ny84MTYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Taylor Liang" />
+            
+              <p class="site-author-name" itemprop="name">Taylor Liang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ORM"><span class="nav-number">1.</span> <span class="nav-text">ORM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate下载"><span class="nav-number">2.</span> <span class="nav-text">Hibernate下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate配置和使用"><span class="nav-number">3.</span> <span class="nav-text">Hibernate配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建User-Library"><span class="nav-number">3.1.</span> <span class="nav-text">新建User Library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在项目中引用User-Library"><span class="nav-number">3.2.</span> <span class="nav-text">在项目中引用User Library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate的使用"><span class="nav-number">3.3.</span> <span class="nav-text">hibernate的使用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Taylor Liang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12548,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+
+  <!-- 页面背景图 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+  <script>
+    $("body").backstretch("http://taylorliang.top/images/background4.jpg");
+  </script>
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,Struts2," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Java Web 开发有三大框架，分别是Struts, Spring, 和Hibernate. Struts2是Struts的下一代产品，是一个基于MVC架构的框架。书上讲了一大堆关于Struts2框架的理论性的东西，看得我似懂非懂的，本人还是坚持理论需要跟实践结合，因此有必要亲自动手体验一番Struts2. 刚开始是用 IntelliJ 作为 IDE 来写一个 Struts2 简单小项目的，但是">
+<meta name="keywords" content="Java,Struts2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Struts2 Eclipse">
+<meta property="og:url" content="http://yoursite.com/2017/12/21/struts2/index.html">
+<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
+<meta property="og:description" content="Java Web 开发有三大框架，分别是Struts, Spring, 和Hibernate. Struts2是Struts的下一代产品，是一个基于MVC架构的框架。书上讲了一大堆关于Struts2框架的理论性的东西，看得我似懂非懂的，本人还是坚持理论需要跟实践结合，因此有必要亲自动手体验一番Struts2. 刚开始是用 IntelliJ 作为 IDE 来写一个 Struts2 简单小项目的，但是">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/eclipse.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/StrutsDownload.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/createProject.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/newDynamicWebProject.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/newServer.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/strutslib.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/strutslib2.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/LoginAction.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/newJsp.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/struts.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/RunOnServer.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/indexPage.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/loginSuccessPage.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/21/struts2/loginFailedPage.png">
+<meta property="og:updated_time" content="2018-01-02T16:47:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Struts2 Eclipse">
+<meta name="twitter:description" content="Java Web 开发有三大框架，分别是Struts, Spring, 和Hibernate. Struts2是Struts的下一代产品，是一个基于MVC架构的框架。书上讲了一大堆关于Struts2框架的理论性的东西，看得我似懂非懂的，本人还是坚持理论需要跟实践结合，因此有必要亲自动手体验一番Struts2. 刚开始是用 IntelliJ 作为 IDE 来写一个 Struts2 简单小项目的，但是">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/21/struts2/eclipse.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/21/struts2/"/>
+
+
+
+
+
+  <title>Struts2 Eclipse | TaylorLiang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TaylorLiang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/21/struts2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Taylor Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TaylorLiang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Struts2 Eclipse</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-21T15:03:57+08:00">
+                2017-12-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-01-03T00:47:36+08:00">
+                2018-01-03
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Java Web 开发有三大框架，分别是Struts, Spring, 和Hibernate. Struts2是Struts的下一代产品，是一个基于MVC架构的框架。书上讲了一大堆关于Struts2框架的理论性的东西，看得我似懂非懂的，本人还是坚持理论需要跟实践结合，因此有必要亲自动手体验一番Struts2. 刚开始是用 IntelliJ 作为 IDE 来写一个 Struts2 简单小项目的，但是用 IntelliJ 跑会报 Artifact 错误，解决起来很麻烦，于是干脆换 Eclipse JavaEE 来跑。本文基于Eclipse Java EE IDE和Struts2.5写一个简单的登录系统。<a id="more"></a></p>
+<h1 id="下载并安装-Eclipse-Java-EE"><a href="#下载并安装-Eclipse-Java-EE" class="headerlink" title="下载并安装 Eclipse Java EE"></a>下载并安装 Eclipse Java EE</h1><p>在<a href="http://www.eclipse.org/downloads/eclipse-packages/" target="_blank" rel="noopener">Eclipse官网</a>下载Eclipse IDE for Java EE Developers.<br><img src="/2017/12/21/struts2/eclipse.png" alt="">，安装很简单，除了路径设置，一路next就ok。</p>
+<h1 id="下载Strut2"><a href="#下载Strut2" class="headerlink" title="下载Strut2"></a>下载Strut2</h1><p>在<a href="http://struts.apache.org/download.cgi" target="_blank" rel="noopener">Struts官网</a>下载最新版本的Struts，我下载的是Struts 2.5.14.1<br><img src="/2017/12/21/struts2/StrutsDownload.png" alt=""></p>
+<h1 id="创建Struts2-Project"><a href="#创建Struts2-Project" class="headerlink" title="创建Struts2 Project"></a>创建Struts2 Project</h1><p>Eclipse Java EE安装成功后Create new Java EE Web Project.</p>
+<p><img src="/2017/12/21/struts2/createProject.jpg" alt=""></p>
+<p>进入到New Dynamic Web Project窗口界面，给Project命名（如struts2test)，在Target runtime选项中选择New Runtime，选Tomcat（如果没有安装Tomcat需要先安装，安装方式请见我之前的博客文章<a href="https://liangmp.github.io/2017/10/24/Tomcat/" target="_blank" rel="noopener">Tomcat部署</a>）</p>
+<p><img src="/2017/12/21/struts2/newDynamicWebProject.jpg" alt=""></p>
+<p><img src="/2017/12/21/struts2/newServer.jpg" alt=""></p>
+<h1 id="添加struts2-jar包"><a href="#添加struts2-jar包" class="headerlink" title="添加struts2 jar包"></a>添加struts2 jar包</h1><p>解压下载下来的struts-2.5.14.1-all.zip压缩包，将<code>~\struts-2.5.14.1\lib</code>里面需要用到的jar包放到项目里面，路径为<code>~\struts2test\WebContent\WEB-INF\lib</code>，如果你不知道需要用什么jar包，可以按我的jar包列表复制过去。<br><img src="/2017/12/21/struts2/strutslib.png" alt=""><br>jar包放到项目里面后，在eclipse里面显示如下：<br><img src="/2017/12/21/struts2/strutslib2.png" alt=""></p>
+<h1 id="创建Action类"><a href="#创建Action类" class="headerlink" title="创建Action类"></a>创建Action类</h1><p>在src目录下new一个package（其实就是一个文件夹），命名为struts.devMode，在里面new一个class，命名为LoginAction.java<br><img src="/2017/12/21/struts2/LoginAction.png" alt=""></p>
+<p>LoginAction.java代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> struts.devMode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginAction</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">       <span class="keyword">private</span> String name;</span><br><span class="line">       <span class="keyword">private</span> String password;</span><br><span class="line">       </span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">execute</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    	   <span class="keyword">if</span> (getPassword().equals(<span class="string">"123456"</span>)) &#123;</span><br><span class="line">    		   <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">    	   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    		   <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">    	   &#125;</span><br><span class="line">       &#125; </span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">backToIndex</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    	   <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> name;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">           <span class="keyword">this</span>.name = name;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	   <span class="keyword">return</span> password;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">    	   <span class="keyword">this</span>.password = password;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="创建视图页面"><a href="#创建视图页面" class="headerlink" title="创建视图页面"></a>创建视图页面</h1><p>在WebContent目录下创建以下3个jsp文件。在这里做一个简单的登录系统，只有三个页面：登录主页面，登录成功页面，登录失败页面。<br><img src="/2017/12/21/struts2/newJsp.png" alt=""></p>
+<p><b>index.jsp</b><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=ISO-8859-1"</span></span><br><span class="line">   pageEncoding=<span class="string">"ISO-8859-1"</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"s"</span> uri=<span class="string">"/struts-tags"</span>%&gt;</span><br><span class="line">   &lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> </span><br><span class="line"><span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Hello World&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;h1&gt;Hello World in WEB-INF&lt;/h1&gt;</span><br><span class="line">   &lt;form action=<span class="string">"hello"</span>&gt;</span><br><span class="line">      &lt;label for="name"&gt;Please enter your username and password&lt;/label&gt;&lt;br/&gt;&lt;br/&gt;</span><br><span class="line">      &lt;label&gt; username &lt;/label&gt;&amp;nbsp;</span><br><span class="line">      &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>/&gt;&lt;br/&gt;&lt;br/&gt;</span><br><span class="line">      &lt;label&gt; password &lt;/label&gt;&amp;nbsp;</span><br><span class="line">      &lt;input type=<span class="string">"password"</span> name=<span class="string">"password"</span>/&gt;&lt;br/&gt;&lt;br/&gt;</span><br><span class="line">      &lt;input type=<span class="string">"submit"</span> value=<span class="string">"Login"</span>/&gt;</span><br><span class="line">   &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p><b>HelloWorld.jsp</b><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"s"</span> uri=<span class="string">"/struts-tags"</span>%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html; charset=UTF-8"</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;Login successfully&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        Hello &lt;s:property value=<span class="string">"name"</span>/&gt;, login successfully. &lt;br/&gt;</span><br><span class="line">        &lt;form action=<span class="string">"back"</span>&gt;</span><br><span class="line">        	&lt;br/&gt;&lt;br/&gt;&lt;input type=<span class="string">"submit"</span> value=<span class="string">"BACK"</span>&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p><b>Error.jsp</b><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"s"</span> uri=<span class="string">"/struts-tags"</span>%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html; charset=UTF-8"</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;Login Failed&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        Sorry &lt;s:property value=<span class="string">"name"</span>/&gt;, login failed, please <span class="keyword">try</span> again.&lt;br/&gt;</span><br><span class="line">        &lt;form action=<span class="string">"back"</span>&gt;</span><br><span class="line">        	&lt;br/&gt;&lt;br/&gt;&lt;input type=<span class="string">"submit"</span> value=<span class="string">"BACK"</span>&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="添加配置文件"><a href="#添加配置文件" class="headerlink" title="添加配置文件"></a>添加配置文件</h1><h2 id="添加struts-xml"><a href="#添加struts-xml" class="headerlink" title="添加struts.xml"></a>添加struts.xml</h2><p>在src目录下添加struts.xml配置文件<br><img src="/2017/12/21/struts2/struts.png" alt=""><br>struts.xml代码内容如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE struts PUBLIC</span></span><br><span class="line"><span class="meta">    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"</span></span><br><span class="line"><span class="meta">    "http://struts.apache.org/dtds/struts-2.5.dtd"&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">struts</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"struts.devMode"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span>     </span><br><span class="line">      <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"hello"</span> <span class="attr">class</span>=<span class="string">"struts.devMode.LoginAction"</span> <span class="attr">method</span>=<span class="string">"execute"</span>&gt;</span></span><br><span class="line">      		<span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"success"</span>&gt;</span>/HelloWorld.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">      		<span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"error"</span>&gt;</span>/Error.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"back"</span> <span class="attr">class</span>=<span class="string">"struts.devMode.LoginAction"</span> <span class="attr">method</span>=<span class="string">"backToIndex"</span>&gt;</span></span><br><span class="line">      		<span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"index"</span>&gt;</span>/index.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">struts</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="添加web-xml"><a href="#添加web-xml" class="headerlink" title="添加web.xml"></a>添加web.xml</h2><p>在<code>WebContent/WEB-INF</code>下创建web.xml文件<br>![struts2/web.png]<br>web.xml代码内容如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">id</span>=<span class="string">"WebApp_9"</span> <span class="attr">version</span>=<span class="string">"2.4"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/j2ee"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">   <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Struts 2<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>struts2<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>struts2<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h1><p>右键Project-&gt;Run As-&gt;Run on Server<br><img src="/2017/12/21/struts2/RunOnServer.png" alt=""><br>点击Finish，在Tomcat服务器上运行程序，运行界面如下，首先在index.jsp界面，要求输入用户名和密码，用户名可以随便输入，密码为123456（密码在LoginAction.java中已设置）,当用户名输入Taylor, 密码输入123456时，跳转到HelloWorld页面，如果密码输入错误，则进入到Error页面，点击Back按钮可以回到index页面。</p>
+<p><b>index页面：</b><br><img src="/2017/12/21/struts2/indexPage.png" alt=""></p>
+<p><b>登录成功页面：</b><br><img src="/2017/12/21/struts2/loginSuccessPage.png" alt=""></p>
+<p><b>登录失败页面：</b><br><img src="/2017/12/21/struts2/loginFailedPage.png" alt=""></p>
+<h1 id="部署到Tomcat"><a href="#部署到Tomcat" class="headerlink" title="部署到Tomcat"></a>部署到Tomcat</h1><p>右键Project-&gt;Export-&gt;WAR file<br>将生成的 WAR file 放到Tomcat的webapp目录下，运行Tomcat，在浏览器地址栏输入<a href="http://localhost:8080/struts2test" target="_blank" rel="noopener">http://localhost:8080/struts2test</a> 即可访问该程序。WAR file的部署方法适用于将写好的程序部署到服务器上。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Struts2/" rel="tag"># Struts2</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/10/TCPConnecttion/" rel="next" title="TCP状态变换--"3次握手4次挥手"">
+                <i class="fa fa-chevron-left"></i> TCP状态变换--"3次握手4次挥手"
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/22/hibernate/" rel="prev" title="Hibernate的配置和使用">
+                Hibernate的配置和使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTU5Ny84MTYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Taylor Liang" />
+            
+              <p class="site-author-name" itemprop="name">Taylor Liang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载并安装-Eclipse-Java-EE"><span class="nav-number">1.</span> <span class="nav-text">下载并安装 Eclipse Java EE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载Strut2"><span class="nav-number">2.</span> <span class="nav-text">下载Strut2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建Struts2-Project"><span class="nav-number">3.</span> <span class="nav-text">创建Struts2 Project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加struts2-jar包"><span class="nav-number">4.</span> <span class="nav-text">添加struts2 jar包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建Action类"><span class="nav-number">5.</span> <span class="nav-text">创建Action类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建视图页面"><span class="nav-number">6.</span> <span class="nav-text">创建视图页面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加配置文件"><span class="nav-number">7.</span> <span class="nav-text">添加配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加struts-xml"><span class="nav-number">7.1.</span> <span class="nav-text">添加struts.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加web-xml"><span class="nav-number">7.2.</span> <span class="nav-text">添加web.xml</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行程序"><span class="nav-number">8.</span> <span class="nav-text">运行程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到Tomcat"><span class="nav-number">9.</span> <span class="nav-text">部署到Tomcat</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Taylor Liang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12548,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+
+  <!-- 页面背景图 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+  <script>
+    $("body").backstretch("http://taylorliang.top/images/background4.jpg");
+  </script>
+</body>
+</html>
