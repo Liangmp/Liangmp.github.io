@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="TaylorLiang&#39;s Blog">
 <meta property="og:description" content="先放上著名的“3次握手4次挥手”示意图：TCP(Transmission Control Protocol)是一种面向连接的、可靠的、基于字节流的传输层通信协议。 TCP连接的建立可以简单地称为3次握手，而连接的中止则可以称为4次挥手。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2017/12/10/TCPConnecttion/TCPConnection/Connection.png">
-<meta property="og:updated_time" content="2018-07-12T10:47:14.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/12/10/TCPConnecttion/Connection.png">
+<meta property="og:updated_time" content="2018-08-26T09:01:37.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP状态变换--&quot;3次握手4次挥手&quot;">
 <meta name="twitter:description" content="先放上著名的“3次握手4次挥手”示意图：TCP(Transmission Control Protocol)是一种面向连接的、可靠的、基于字节流的传输层通信协议。 TCP连接的建立可以简单地称为3次握手，而连接的中止则可以称为4次挥手。">
-<meta name="twitter:image" content="http://yoursite.com/2017/12/10/TCPConnecttion/TCPConnection/Connection.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/10/TCPConnecttion/Connection.png">
 
 
 
@@ -310,12 +310,34 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-07-12T18:47:14+08:00">
-                2018-07-12
+              <time title="Post modified" itemprop="dateModified" datetime="2018-08-26T17:01:37+08:00">
+                2018-08-26
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -349,7 +371,7 @@
       
 
       
-        <p>先放上著名的“3次握手4次挥手”示意图：<br><img src="/2017/12/10/TCPConnecttion/TCPConnection/Connection.png" alt=""><br>TCP(Transmission Control Protocol)是一种面向连接的、可靠的、基于字节流的传输层通信协议。</p>
+        <p>先放上著名的“3次握手4次挥手”示意图：<br><img src="/2017/12/10/TCPConnecttion/Connection.png" alt=""><br>TCP(Transmission Control Protocol)是一种面向连接的、可靠的、基于字节流的传输层通信协议。</p>
 <p>TCP连接的建立可以简单地称为3次握手，而连接的中止则可以称为4次挥手。<a id="more"></a></p>
 <h1 id="建立连接"><a href="#建立连接" class="headerlink" title="建立连接"></a>建立连接</h1><p>在TCP/IP协议中，TCP协议提供可靠的链接服务，采用三次握手建立一个连接。<br><b>1.第一次握手</b>：建立连接时，客户端发送SYN包（SYN=J）到服务器，并进入SYN_SEND状态，等待服务器确认。<br><b>2.第二次握手</b>：服务器收到SYN包，必须确认客户的SYN（ACK=J+1），同时自己也发送一个SYN包（SYN=K），即SYN+ACK包，此时服务器进入SYN_RECV状态。<br><b>3.第三次握手</b>：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK（ACK=K+1），此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成3次握手。<br>完成三次握手后，客户端和服务器开始传送数据，也就是ESTABLISHED状态。</p>
 <h1 id="结束连接"><a href="#结束连接" class="headerlink" title="结束连接"></a>结束连接</h1><p>TCP有一个很特别的概念，叫“半关闭”，因为TCP的连接时全双工（可以同时发送和接收）连接，因此在关闭连接的时候，必须关闭发送和接收双方的连接。客户机给服务器发送一个FIN的TCP报文，客户机处于FIN_WAIT_1（主动关闭）服务器收到报文同时返回给客户端一个ACK报文，此时服务器处于CLOSE_WAIT（被动关闭）状态，客户机收到报文后仍处于FIN_WAIT_1状态。服务器发送FIN报文给客户端，客户端收到后处于TIME_WAIT状态，表示已收到对方的FIN报文，并且发送ACK报文，等待2MSL（Maximum Segment Lifetime）后就会回到COLSED可用状态。服务器收到客户端的ACK报文后，就会处于CLOSED状态。</p>
