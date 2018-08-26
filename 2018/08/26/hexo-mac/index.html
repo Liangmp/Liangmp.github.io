@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/3.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/4.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/08/26/hexo-mac/5.jpeg">
-<meta property="og:updated_time" content="2018-08-26T04:24:34.122Z">
+<meta property="og:updated_time" content="2018-08-26T08:14:16.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo GitHub pages Windows to Mac">
 <meta name="twitter:description" content="最近更换了笔记本，由原来的用了多年的Windows换成mac，需要将hexo重新部署到新的mac上，下面说一下步骤和部署过程中遇到的问题以及解决方案。">
@@ -314,7 +314,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-08-26T12:24:34+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2018-08-26T16:14:16+08:00">
                 2018-08-26
               </time>
             
@@ -395,7 +395,7 @@
 <p>or<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
 <p>我遇到的问题是<code>unable to auto-detect email address</code>，错误如下图所示<br><img src="/2018/08/26/hexo-mac/3.jpeg" alt=""><br>于是我用<code>git config</code>重新设置了一下user.name和user.email，重新deploy后就可以了。<br><img src="/2018/08/26/hexo-mac/4.jpeg" alt=""></p>
 <h1 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h1><p>部署完成并且<code>hexo server</code>后发现文章里面的图片无法正常显示，用浏览器的开发者工具（网页检查器）检查后发现图片链接不正确，后来才想起之前在Windows部署的时候采用了相对路径的方式，具体设置是将post_asset_folder设为true，这样的话当你<code>hexo new post &quot;title&quot;</code>的时候在<code>/source/_post/</code>文件夹下就会生成相应的“title.md”以及“title”文件夹，“title”文件夹可用于存放这篇文章需要用到的图片。<br><img src="/2018/08/26/hexo-mac/5.jpeg" alt=""></p>
-<p><strong>推荐阅读</strong><br><a href="http://lijiankun24.com/Mac下Hexo和GitHub-Pages搭建个人博客1/" target="_blank" rel="noopener">Mac 下 Hexo 和 GitHub-Pages 搭建个人博客（一）– 一些无处安放到代码和故事</a><br><a href="https://madongqiang2201.github.io/2016/07/21/Mac下Hexo＋github-pages搭建静态博客/" target="_blank" rel="noopener">Mac搭建Hexo博客及NexT主题配置优化 – 小马哥Mark的博客</a><br><a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">hexo博客图片问题 – 简书</a><br><a href="https://www.jianshu.com/p/6505ead00d59" target="_blank" rel="noopener">一篇文章带你玩转Mac Finder – 简书</a><br><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html" target="_blank" rel="noopener">打造个性超赞博客Hexo+NexT+GitHubPages的超深度优化 – reuixiy</a></p>
+<p><strong>推荐阅读</strong><br><a href="http://lijiankun24.com/Mac下Hexo和GitHub-Pages搭建个人博客1/" target="_blank" rel="noopener">Mac 下 Hexo 和 GitHub-Pages 搭建个人博客（一）– 一些无处安放到代码和故事</a><br><a href="https://madongqiang2201.github.io/2016/07/21/Mac下Hexo＋github-pages搭建静态博客/" target="_blank" rel="noopener">Mac搭建Hexo博客及NexT主题配置优化 – 小马哥Mark的博客</a><br><a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">hexo博客图片问题 – 简书</a><br><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html" target="_blank" rel="noopener">打造个性超赞博客Hexo+NexT+GitHubPages的超深度优化 – reuixiy</a><br><a href="http://taylorliang.top/2017/10/31/hexoBlog/" target="_blank" rel="noopener">如何用Github+Hexo搭建博客网站(1)</a><br><a href="http://taylorliang.top/2017/11/04/nextHexo/" target="_blank" rel="noopener">如何用Github+Hexo搭建博客网站(2) – Next主题的安装和配置</a><br><a href="http://taylorliang.top/2017/10/24/aboutHexo/" target="_blank" rel="noopener">关于hexo的使用</a><br><a href="https://www.jianshu.com/p/6505ead00d59" target="_blank" rel="noopener">一篇文章带你玩转Mac Finder – 简书</a></p>
 
       
     </div>
