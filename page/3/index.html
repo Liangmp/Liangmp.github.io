@@ -2,15 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
   
 
 
@@ -18,7 +9,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -29,6 +20,8 @@
 
 
 
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -45,6 +38,9 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -54,40 +50,59 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
 
 
+  <meta name="keywords" content="taylorliang,博客,blog,liangmanping" />
 
-<script id="hexo.configurations">
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="TaylorLiang&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TaylorLiang&#39;s Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -99,33 +114,12 @@
 </script>
 
 
-  
-
-
-
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="TaylorLiang&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
-<meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TaylorLiang&#39;s Blog">
-
-
-
-
-
 
   <link rel="canonical" href="http://yoursite.com/page/3/"/>
 
 
 
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
+
 
   <title>TaylorLiang's Blog</title>
   
@@ -136,35 +130,6 @@
 
 
 
-
-
-
-
-
-  <noscript>
-  <style>
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion .logo-line-before i { left: initial; }
-    .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
 
 </head>
 
@@ -181,22 +146,23 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">TaylorLiang's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-    
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -204,103 +170,65 @@
   </div>
 </div>
 
-
-
 <nav class="site-nav">
+  
+
   
     <ul id="menu" class="menu">
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
       
-    
 
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-
-  </li>
-
-      
       
     </ul>
-  
-
   
 
   
@@ -308,23 +236,12 @@
 
 
 
-  
-
-
-
-</div>
+ </div>
     </header>
-
-    
-
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-            
-
-          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -337,8 +254,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -349,7 +264,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -361,22 +276,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/23/MySQLUsage/" class="post-title-link" itemprop="url">MySQL命令行的简单使用</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/23/MySQLUsage/" itemprop="url">MySQL命令行的简单使用</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -384,30 +290,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-23 13:19:29" itemprop="dateCreated datePublished" datetime="2017-11-23T13:19:29+08:00">2017-11-23</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-23T13:19:29+08:00">
+                2017-11-23
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-11-24 00:44:52" itemprop="dateModified" datetime="2017-11-24T00:44:52+08:00">2017-11-24</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-24T00:44:52+08:00">
+                2017-11-24
+              </time>
             
           </span>
 
@@ -423,7 +324,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
+                  </a>
+                </span>
 
                 
                 
@@ -462,29 +367,21 @@
 <p>首先确保MySQL已启动服务：<br><img src="/2017/11/23/MySQLUsage/1.png" alt=""></p>
 <p>启动windows命令行，<code>windows + R</code>，输入cmd，进入到windows command cmd，cd到MySQL Server的bin目录下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Program Files\MySQL\MySQL Server 5.7\bin</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/23/MySQLUsage/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/23/MySQLUsage/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -517,8 +414,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -529,7 +424,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -541,22 +436,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/23/MySQL/" class="post-title-link" itemprop="url">MySQL安装</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/23/MySQL/" itemprop="url">MySQL安装</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -564,30 +450,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-23 00:46:00" itemprop="dateCreated datePublished" datetime="2017-11-23T00:46:00+08:00">2017-11-23</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-23T00:46:00+08:00">
+                2017-11-23
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-01-03 00:47:36" itemprop="dateModified" datetime="2018-01-03T00:47:36+08:00">2018-01-03</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2018-01-03T00:47:36+08:00">
+                2018-01-03
+              </time>
             
           </span>
 
@@ -603,7 +484,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
+                  </a>
+                </span>
 
                 
                 
@@ -640,29 +525,21 @@
         
           <p>MySQL是世界上最流行的开源数据库，MySQL有很多不同的版本，包括企业版、集群版、标准版、经典版和社区版，其中MySQL社区版是我们普通开发者常用的版本。下面介绍MySQL社区版的安装。</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/23/MySQL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/23/MySQL/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -695,8 +572,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -707,7 +582,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -719,22 +594,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/21/WebDriverException/" class="post-title-link" itemprop="url">WebDriverException</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/21/WebDriverException/" itemprop="url">WebDriverException</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -742,18 +608,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-21 11:54:42 / Modified: 23:22:26" itemprop="dateCreated datePublished" datetime="2017-11-21T11:54:42+08:00">2017-11-21</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-21T11:54:42+08:00">
+                2017-11-21
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-21T23:22:26+08:00">
+                2017-11-21
+              </time>
             
           </span>
 
@@ -769,7 +642,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -806,29 +683,21 @@
         
           <p>今天早上回到公司跑auto test，突然跑不动了，Selenium无法在Chrome浏览器上打开指定网页，但是直接手动在浏览器上打开网页是可以正常打开的，debug项目后发现报org.openqa.selenium.WebDriverException错误，详细错误提示如下所示</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/21/WebDriverException/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/21/WebDriverException/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -861,8 +730,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -873,7 +740,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -885,22 +752,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/21/howWebAppWorks/" class="post-title-link" itemprop="url">浅谈Web应用工作原理</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/21/howWebAppWorks/" itemprop="url">浅谈Web应用工作原理</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -908,30 +766,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-21 00:23:20" itemprop="dateCreated datePublished" datetime="2017-11-21T00:23:20+08:00">2017-11-21</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-21T00:23:20+08:00">
+                2017-11-21
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-11-28 23:35:52" itemprop="dateModified" datetime="2017-11-28T23:35:52+08:00">2017-11-28</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-28T23:35:52+08:00">
+                2017-11-28
+              </time>
             
           </span>
 
@@ -947,7 +800,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -984,29 +841,21 @@
         
           <p>我们平时上网一般来说都是这么个流程：打开一个浏览器，在地址栏输入URL（比如输入<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> ），等待一小会儿后页面就会出现要访问的内容，然后可以在网页上继续其他的操作，如点击网页上的超链接，输入信息，点击提交，等待网页再次刷新返回内容。。。不论是在浏览器地址栏输入URL还是在网页上进行操作，等待网页内容更新的过程其实就是浏览器访问Web应用的过程，也即Web工作的过程，这个过程具体描述如下：</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/21/howWebAppWorks/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/21/howWebAppWorks/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1039,8 +888,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1051,7 +898,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1063,22 +910,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/20/webFrontBack/" class="post-title-link" itemprop="url">浅谈Web应用开发技术</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/20/webFrontBack/" itemprop="url">浅谈Web应用开发技术</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1086,30 +924,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-20 20:55:58" itemprop="dateCreated datePublished" datetime="2017-11-20T20:55:58+08:00">2017-11-20</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T20:55:58+08:00">
+                2017-11-20
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-11-21 00:22:44" itemprop="dateModified" datetime="2017-11-21T00:22:44+08:00">2017-11-21</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-21T00:22:44+08:00">
+                2017-11-21
+              </time>
             
           </span>
 
@@ -1125,7 +958,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1163,29 +1000,21 @@
           <p>Web应用程序是一种使用HTTP(HyperText Transfer Protocol, 超文本传输协议)作为核心通信协议，通过Internet让Web浏览器和服务器通信的计算机程序。</p>
 <p>Web应用程序的开发主要分为客户端开发技术和服务器端开发技术，也就是我们常说的前端开发和后端开发。</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/20/webFrontBack/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/20/webFrontBack/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1218,8 +1047,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1230,7 +1057,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1242,22 +1069,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/17/arraylist/" class="post-title-link" itemprop="url">Java容器之ArrayList实现可变数组的存储</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/17/arraylist/" itemprop="url">Java容器之ArrayList实现可变数组的存储</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1265,30 +1083,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-17 10:16:19" itemprop="dateCreated datePublished" datetime="2017-11-17T10:16:19+08:00">2017-11-17</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-17T10:16:19+08:00">
+                2017-11-17
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-11-20 20:55:08" itemprop="dateModified" datetime="2017-11-20T20:55:08+08:00">2017-11-20</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-20T20:55:08+08:00">
+                2017-11-20
+              </time>
             
           </span>
 
@@ -1304,7 +1117,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1341,29 +1158,21 @@
         
           <p>容器是java里面所包含的jar包内事先写好的程序，java容器有很多种，常见的有ArrayList，LinkedList,HashMap，TreeMap。容器的出现时为了方便程序员写代码使用，相当于制造汽车的时候有了组件，而不需要重复一些造轮子工作。</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/17/arraylist/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/17/arraylist/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1396,8 +1205,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1408,7 +1215,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1420,22 +1227,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/16/sqldelete/" class="post-title-link" itemprop="url">数据库删除语句Drop, Delete和Truncate的区别</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/16/sqldelete/" itemprop="url">数据库删除语句Drop, Delete和Truncate的区别</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1443,30 +1241,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-16 15:26:59" itemprop="dateCreated datePublished" datetime="2017-11-16T15:26:59+08:00">2017-11-16</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-16T15:26:59+08:00">
+                2017-11-16
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-11-20 00:06:48" itemprop="dateModified" datetime="2017-11-20T00:06:48+08:00">2017-11-20</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-20T00:06:48+08:00">
+                2017-11-20
+              </time>
             
           </span>
 
@@ -1482,7 +1275,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1519,29 +1316,21 @@
         
           <p>drop,delete和truncate都是删除命令，但是用起来有很大差别，drop用于删除表，delete用于删除表中的某一行或多行，truncate用于清空表格中的数据。</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/16/sqldelete/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/16/sqldelete/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1574,8 +1363,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1586,7 +1373,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1598,22 +1385,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/15/sqljdbc/" class="post-title-link" itemprop="url">如何使用JDBC连接数据库并且在Java程序中实现数据库查询</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/15/sqljdbc/" itemprop="url">如何使用JDBC连接数据库并且在Java程序中实现数据库查询</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1621,30 +1399,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-15 23:58:42" itemprop="dateCreated datePublished" datetime="2017-11-15T23:58:42+08:00">2017-11-15</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-15T23:58:42+08:00">
+                2017-11-15
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-11-20 20:55:08" itemprop="dateModified" datetime="2017-11-20T20:55:08+08:00">2017-11-20</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-20T20:55:08+08:00">
+                2017-11-20
+              </time>
             
           </span>
 
@@ -1660,7 +1433,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1697,29 +1474,21 @@
         
           <p>原材料：sqljdbc4.jar<br>数据库：SQL Server<br>代码编辑工具：IntelliJ IDEA</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/15/sqljdbc/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/15/sqljdbc/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1752,8 +1521,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1764,7 +1531,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1776,22 +1543,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/10/taylorswift/" class="post-title-link" itemprop="url">6 Discographies of Taylor Swift</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/10/taylorswift/" itemprop="url">6 Discographies of Taylor Swift</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1799,30 +1557,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-10 11:59:47" itemprop="dateCreated datePublished" datetime="2017-11-10T11:59:47+08:00">2017-11-10</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T11:59:47+08:00">
+                2017-11-10
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-07-12 13:05:28" itemprop="dateModified" datetime="2018-07-12T13:05:28+08:00">2018-07-12</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-12T13:05:28+08:00">
+                2018-07-12
+              </time>
             
           </span>
 
@@ -1857,29 +1610,21 @@
         
           <p>Today, November 10th 2017, Taylor Swift’s sixth album is published. Here I list the whole 6 of Taylor Swift and the song list inside them. Let’s check it out how many Taylor Swift’s songs you have known.</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/10/taylorswift/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/10/taylorswift/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1912,8 +1657,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1924,7 +1667,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1936,22 +1679,13 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2017/11/07/iisInstall/" class="post-title-link" itemprop="url">IIS安装部署</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/11/07/iisInstall/" itemprop="url">IIS安装部署</a></h2>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1959,30 +1693,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="Created: 2017-11-07 23:46:10" itemprop="dateCreated datePublished" datetime="2017-11-07T23:46:10+08:00">2017-11-07</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-07T23:46:10+08:00">
+                2017-11-07
+              </time>
             
 
             
-              
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
               
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-11-17 00:32:34" itemprop="dateModified" datetime="2017-11-17T00:32:34+08:00">2017-11-17</time>
+                <span class="post-meta-item-text">Post modified&#58;</span>
               
+              <time title="Post modified" itemprop="dateModified" datetime="2017-11-17T00:32:34+08:00">
+                2017-11-17
+              </time>
             
           </span>
 
@@ -1998,7 +1727,11 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
 
                 
                 
@@ -2037,29 +1770,21 @@
 <p>网站部署常用的有三种，<a href="https://liangmp.github.io/2017/10/24/Tomcat/" target="_blank" rel="noopener">前面的一篇博客</a>已经讲了tomcat的部署，今天我们来讲IIS的部署。</p>
 <p>IIS是Internet Information Services的简称，是微软公司创建的具有可扩展性的物联网服务。iis是内置在Windows系统里面的，因此安装起来非常简单，如微软操作系统一样，都有图形界面，所有步骤都是傻瓜式的点点点。下面就来配上截图讲一下安装过程。</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/07/iisInstall/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/07/iisInstall/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -2088,12 +1813,15 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
 
           </div>
+          
+
+
           
 
         </div>
@@ -2116,140 +1844,79 @@
 
       
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Taylor Liang" />
             
               <p class="site-author-name" itemprop="name">Taylor Liang</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">43</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
+          <nav class="site-state motion-element">
 
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">26</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
             
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+
+          
+
+          
+          
+
+          
+          
+
           
 
         </div>
-      </div>
+      </section>
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -2262,19 +1929,17 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Taylor Liang</span>
-
-  
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -2282,30 +1947,31 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
 
         
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv" title="Total Visitors">
+    <span class="site-uv">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
     </span>
   
 
   
-    <span class="site-pv" title="Total Views">
+    <span class="site-pv">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
     </span>
   
 </div>
-
 
 
 
@@ -2319,22 +1985,14 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
 
-    
-
-    
   </div>
 
   
 
-<script>
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2348,11 +2006,7 @@
 
 
 
-
-
-
-
-
+  
 
 
 
@@ -2367,67 +2021,51 @@
 
   
   
-    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/src/affix.js?v=6.6.0"></script>
-
-  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
-
-
-
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
 
-  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
-
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  
-
-
-
-
-
-
-
-
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
 
 
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
 
 
 
@@ -2435,6 +2073,57 @@
 
   
 
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
   
 
   
@@ -2442,19 +2131,7 @@
   
 
   
-  
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   <!-- 页面背景图 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
