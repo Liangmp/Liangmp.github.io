@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="这是一篇用Github+Hexo搭建个人博客网站的经验分享。">
+<meta name="description" content="这是一篇windows下用Github+Hexo搭建个人博客网站的经验分享，mac请参考我的另一篇博文Hexo GitHub pages Windows to Mac。">
 <meta name="keywords" content="hexo,blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何用Github+Hexo搭建博客网站(1)">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/hexoBlog/index.html">
 <meta property="og:site_name" content="TaylorLiang&#39;s Blog">
-<meta property="og:description" content="这是一篇用Github+Hexo搭建个人博客网站的经验分享。">
+<meta property="og:description" content="这是一篇windows下用Github+Hexo搭建个人博客网站的经验分享，mac请参考我的另一篇博文Hexo GitHub pages Windows to Mac。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2017/10/31/hexoBlog/github_hexo.png">
 <meta property="og:image" content="http://yoursite.com/2017/10/31/hexoBlog/gitBash.png">
@@ -104,10 +104,10 @@
 <meta property="og:image" content="http://yoursite.com/2017/10/31/hexoBlog/yourRepoURL.png">
 <meta property="og:image" content="http://yoursite.com/2017/10/31/hexoBlog/site.png">
 <meta property="og:image" content="http://yoursite.com/2017/10/31/hexoBlog/head.png">
-<meta property="og:updated_time" content="2017-11-03T19:20:56.000Z">
+<meta property="og:updated_time" content="2019-01-05T18:17:26.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何用Github+Hexo搭建博客网站(1)">
-<meta name="twitter:description" content="这是一篇用Github+Hexo搭建个人博客网站的经验分享。">
+<meta name="twitter:description" content="这是一篇windows下用Github+Hexo搭建个人博客网站的经验分享，mac请参考我的另一篇博文Hexo GitHub pages Windows to Mac。">
 <meta name="twitter:image" content="http://yoursite.com/2017/10/31/hexoBlog/github_hexo.png">
 
 
@@ -285,7 +285,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="生命不息，折腾不止">
       <meta itemprop="image" content="/images/head.jpg">
     </span>
 
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2017-11-04T03:20:56+08:00">
-                2017-11-04
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-06T02:17:26+08:00">
+                2019-01-06
               </time>
             
           </span>
@@ -387,7 +387,7 @@
       
 
       
-        <p><img src="/2017/10/31/hexoBlog/github_hexo.png" alt="Github+Hexo"><br>这是一篇用Github+Hexo搭建个人博客网站的经验分享。<a id="more"></a></p>
+        <p><img src="/2017/10/31/hexoBlog/github_hexo.png" alt="Github+Hexo"><br>这是一篇windows下用Github+Hexo搭建个人博客网站的经验分享，mac请参考我的另一篇博文<a href="http://taylorliang.top/2018/08/26/hexo-mac/" target="_blank" rel="noopener">Hexo GitHub pages Windows to Mac</a>。<a id="more"></a></p>
 <h2 id="Git的安装与配置"><a href="#Git的安装与配置" class="headerlink" title="Git的安装与配置"></a>Git的安装与配置</h2><p>git是目前最先进的版本控制工具，很多优秀著名的软件都是用git来管理的。</p>
 <h3 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h3><p>如果你的电脑没有git，那么首先需要安装git。git一开始是写给Linux系统的，因为很多做开发的程序员都喜欢用Linux，后来Windows开发者越来越多，于是出现了git-for-windows，下载地址请点击<a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">这里</a>，如果下载太慢，可以换个地方到<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">这里</a>下载。下载完之后双击.exe进行安装，安装过程基本上一路点next就行。如果安装过程中忘记了设置在桌面放置git快捷方式，等安装好后回到安装路径文件夹里面创建git bash快捷方式就可以了。<br><img src="/2017/10/31/hexoBlog/gitBash.png" alt="git bash"></p>
 <h3 id="Git的基本配置"><a href="#Git的基本配置" class="headerlink" title="Git的基本配置"></a>Git的基本配置</h3><p>安装完成后，在D盘（在其他盘也行）新建一个文件夹，命名为“git”（命名随意，看你喜欢），然后进入该文件，在空白处右击鼠标，发现多了“git GUI here”和“git bash here”两个选项，选“git bash here”。<br>输入<code>git -version</code>可以查看当前git版本号。<br>设置user name，输入命令行:<br><code>git config --global user.name &quot;taylorliang&quot;</code><br>将taylorliang改为你的名字<br>设置user email：<br><code>git config --global user.email taylorliang@domain.com</code><br>需要将<a href="mailto:taylor@domain.com" target="_blank" rel="noopener">taylor@domain.com</a>改为你的邮箱地址<br>查看修改：<br><code>git config --list</code><br>可以看到，user.name和user.email已经设置为我们想要的值了。<br><img src="/2017/10/31/hexoBlog/gitDos.png" alt=""><br>在git bash输入<code>pwd</code>，找到pwd后显示的路径，进去找到.gitconfig文件，将它复制到刚才新建的文件夹D:\git里面</p>
@@ -406,7 +406,7 @@
 <h2 id="博客管理及博文更新"><a href="#博客管理及博文更新" class="headerlink" title="博客管理及博文更新"></a>博客管理及博文更新</h2><p>保存好所有修改，在blog文件夹下git bash输入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate //生成静态网页文件，也可以简写成 hexo g</span><br><span class="line">hexo server   //在本地浏览器上预览，也可以简写成 hexo s</span><br><span class="line">hexo deploy   //部署到远程仓库上，也可以简写成 hexo d</span><br></pre></td></tr></table></figure></p>
 <p>此时可以尝试在浏览器中输入<a href="https://yourname.github.io" target="_blank" rel="noopener">https://yourname.github.io</a> ，如果能出现hexo画面，就说明已成功绑定Github远程仓库，github+hexo的博客搭建已经基本完成，剩下的就得靠你自己去不断探索啦，大胆地按照你的个人喜好DIY你的个人博客吧。</p>
 <h2 id="Next主题的安装和配置"><a href="#Next主题的安装和配置" class="headerlink" title="Next主题的安装和配置"></a>Next主题的安装和配置</h2><p>Next是一种优雅且好用的Hexo主题，在<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Github</a>上获得了大量的star和folk，目前在网上见到个人博客大多数都采用了next。</p>
-<p>这一part的安装和使用说明请移步到下一篇博文。</p>
+<p>这一part的安装和使用说明请移步到下一篇博文<a href="http://taylorliang.top/2017/11/04/nextHexo/" target="_blank" rel="noopener">如何用Github+Hexo搭建博客网站(2) – Next主题的安装和配置</a>。</p>
 
       
     </div>
@@ -539,7 +539,7 @@
                 alt="Taylor Liang" />
             
               <p class="site-author-name" itemprop="name">Taylor Liang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">生命不息，折腾不止</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -571,7 +571,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
