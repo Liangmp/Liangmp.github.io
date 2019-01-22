@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="随笔,hkucs," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="时间过得有点快，研究生申请的忙碌，面试的紧张和等待offer的焦虑依然记忆犹新，然而不知不觉间已经在港大待了一个学期了，趁放假写个学期回顾吧，也算是作为自己的研究生学习的阶段性总结。">
+<meta name="keywords" content="随笔,hkucs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HKU MScCS First Semester 回顾">
+<meta property="og:url" content="http://yoursite.com/2019/01/07/msccs1stSemester/index.html">
+<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
+<meta property="og:description" content="时间过得有点快，研究生申请的忙碌，面试的紧张和等待offer的焦虑依然记忆犹新，然而不知不觉间已经在港大待了一个学期了，趁放假写个学期回顾吧，也算是作为自己的研究生学习的阶段性总结。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/01/07/msccs1stSemester/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/07/msccs1stSemester/courses.jpeg">
+<meta property="og:updated_time" content="2019-01-22T04:44:49.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HKU MScCS First Semester 回顾">
+<meta name="twitter:description" content="时间过得有点快，研究生申请的忙碌，面试的紧张和等待offer的焦虑依然记忆犹新，然而不知不觉间已经在港大待了一个学期了，趁放假写个学期回顾吧，也算是作为自己的研究生学习的阶段性总结。">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/07/msccs1stSemester/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/07/msccs1stSemester/"/>
+
+
+
+
+
+  <title>HKU MScCS First Semester 回顾 | TaylorLiang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TaylorLiang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/07/msccs1stSemester/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Taylor Liang">
+      <meta itemprop="description" content="生命不息，折腾不止">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TaylorLiang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">HKU MScCS First Semester 回顾</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-07T00:59:36+08:00">
+                2019-01-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-22T12:44:49+08:00">
+                2019-01-22
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2019/01/07/msccs1stSemester/1.jpg" alt=""></p>
+<p>时间过得有点快，研究生申请的忙碌，面试的紧张和等待offer的焦虑依然记忆犹新，然而不知不觉间已经在港大待了一个学期了，趁放假写个学期回顾吧，也算是作为自己的研究生学习的阶段性总结。<br><a id="more"></a></p>
+<p>还记得大三的时候，跟朋友来香港一日游，一来到香港就乘地铁直奔港大。港大的地形比较复杂，大陆的高校大部分都是平面的（因为地方大），而港大是建在山上的，地形非常的立体，就算看着地图也会迷路。我跟朋友在大学街上走了走，走到百周年纪念墙拍了个游客照，我说我很喜欢这里，希望能来这里上学。没想到这么一说，居然成真了。感谢mastermate一路以来的陪伴，感谢迅羽学姐帮助我完成文书的雏形，感谢Uncle Wong耐心地一次又一次地帮我修改我的申请文书，还要感谢在申请过程中所有给予过我鼓励和帮助的人，以及网上的所有无私分享经验的朋友们，特别是[世靖的码场][世靖的码场]，这位学长还特意给我回了邮件解答我的问题，非常热心。在享受别人的分享的同时，当然也不能忘记向别人分享自己啦！有需要的朋友可以参考一下我那时候的[HKU MScCS 面经][HKU MSc in Computer Science 1.14深圳面试]和[Offer榜][寄托天下offer榜 - TaylorLiang]，顺手贴一下我同学[Neo][Neo33的博客]的面经。</p>
+<p>刚开学不久的时候，每每走在学校里，依然忍不住会像游客一样拿出手机来到处拍。在课还不紧的时候，我经常在学校里面乱逛，希望能尽快熟悉校园。我发现港大的建筑构造真是太深情了，这里有很多小路，熟悉学校的人都会抄捷径走。永远分不清自己在几楼，比如TT.Tsui楼，从太古楼前进去是3楼，从美术馆进去是G层，从大学街上层进去黄克兢楼是5楼，还可以从黄克兢楼下到G层坐地铁，主图书馆有两个入口，一个在图书馆2层，一个在G层，可以从梁銶琚楼G层坐电梯到LG2层然后走到TT.Tsui楼的3层。。。刚来港大的人真的很容易在学校转晕的。现在在学校待了一个学期，我已经能作为免费导游带着我的朋友们逛港大啦！当然，还有很多楼未去探索，毕竟我们学院上课的楼就那么几栋。</p>
+<p><img src="/2019/01/07/msccs1stSemester/courses.jpeg" alt=""></p>
+<p>第一学期一共有11门课可选，当然我们还能选EEE和ECIC的课，但是我只选了我们CS的课。由于我是General Stream，没有选课限制，因此我完全按照了自己的喜好来选课。毕竟都研究生阶段了，不用太在意课程给分，学到的才是最真实的。我选了Data mining, Computational intelligence and machine learning, Smart phone apps development, 和Reverse engineering and malware analysis这四门课。前两周是Add/Drop period，因此我几乎把所有的课都试听了一遍。刚开学的前几周非常闲，而且刚开始的课程又比较简单，没什么assignment要做，以为自己能趁机多蹭几门课，后来课程任务越来越重，就没去蹭了。下面说一下我选的这四门课。</p>
+<h1 id="Courses"><a href="#Courses" class="headerlink" title="Courses"></a>Courses</h1><h2 id="Data-mining"><a href="#Data-mining" class="headerlink" title="Data mining"></a>Data mining</h2><p>讲Data mining这门课的有两位老师，第一学期是 Prof.Ben Kao，第二学期是 Dr. Sozio Mauro。不得不说 Prof.Ben Kao讲课讲得真的太好了，不仅讲课调理清晰，课件做得让人看得明白，而且英文讲得非常好非常地道，让人听着非常舒服，因此听他讲课是一种享受。一开始听Prof.Ben Kao讲话的时候就觉得他长得很帅，后来坐前面认真看了一下，发现并没有想象中的帅，不过没关系，他讲的英文还是一如既往的好听。</p>
+<p>这门课先是讲了KDD(Knowledge Discovery in Databases)，然后重点讲KDD里面的Data mining(find interesting pattern)的方法，主要分三类：</p>
+<ol>
+<li>Classification</li>
+<li>Association</li>
+<li>Clustering</li>
+</ol>
+<p><strong>Classification</strong>主要讲<strong>decision tree</strong>（涉及到classification error, entropy, information gain, and Gini index）， <strong>bayes classifier</strong>（naive bayes），<strong>k-nn(k nearest neighbour) classifier</strong>（涉及到distance的度量方式，Manhattan Distance，Euclidean metric and Minkowski distance，以及不同data type的similarity和dissimilarity的度量方法），简单讲了一下<strong>SVM(Support Vector Machine)</strong></p>
+<p><strong>Association</strong>主要讲<strong>binary transaction association</strong>（涉及到frequent itemset, support threshold, confident threshold, 用Apriori-gen算法来寻找frequent itemtset，还涉及到Apriori-gen算法的优化），<strong>numeric association</strong>（quantitative to binary, 涉及到density问题），<strong>quantitative transaction association</strong>（考虑数量的transaction，计算itemset的utility），<strong>sequence association</strong>（这里问题比较复杂，其实就是带有time label的一连串transactions）</p>
+<p><strong>Clustering</strong>最简单，如果说前面讲的Classification是监督分类（Supervised classification），那么clustering就是非监督分类（Unsupervised classification），cluster需要proximity的度量，可以用similarity或者dissimilarity。Clustering的算法主要分为两种：</p>
+<ol>
+<li>partitional clustering(non-overlapping)</li>
+<li>hierarchical clustering(nested)。</li>
+</ol>
+<p>K-means是partitional clustering approach，SSE(Sum of Squared Error)是evaluate k-means的一种measurement，k-means的优化有Bisecting K-means(handle empty cluster)和k-mediods。</p>
+<p>Hierachical clustering有两种，Agglomerative和Divisive，我们主要用Agglomerative，定义inter-cluster similarity的方法有四种，MIN(shortest distance), MAX(largest distance), Group Average(average distance) and Distance between centroids(distance of averages)</p>
+<p>Final exam的前一节课讲了<strong>OLAP</strong>(On-Line Analytical Processing)，但是那节课我在赶Apps的group assignment，所以完全没听，发邮件问TA Kevin，回复说final不考OLAP，但是TA骗了我，final第一题就是OLAP。。。</p>
+<p>TA是HK local（从他的名字推测出来的），微胖（但是胖得挺可爱的），主要负责讲data mining的实操部分，怎么用Weka之类的，跟Prof.Ben Kao相比，Kevin的英文就差多了，说话还特别小声，坐后面一点的同学估计是懒得听他说话了。</p>
+<p>整体来说Data mining这门课是很值得选的，每次课听Prof.Ben Kao讲课都是一种享受，我本科接触过classification和clustering，也用过Weka，因此觉得课程难度不大，但是assignments做起来挺烦人的，一做就要做好几天甚至一个星期，需要多次修改，而且还很迎合TA的口味，总感觉TA在想尽办法扣我们assignment的分。</p>
+<h2 id="Smart-phone-apps-development"><a href="#Smart-phone-apps-development" class="headerlink" title="Smart phone apps development"></a>Smart phone apps development</h2><h2 id="Reverse-engineering-and-malware-analysis"><a href="#Reverse-engineering-and-malware-analysis" class="headerlink" title="Reverse engineering and malware analysis"></a>Reverse engineering and malware analysis</h2><h2 id="Computational-intelligence-and-machine-learning"><a href="#Computational-intelligence-and-machine-learning" class="headerlink" title="Computational intelligence and machine learning"></a>Computational intelligence and machine learning</h2><h1 id="Assignments"><a href="#Assignments" class="headerlink" title="Assignments"></a>Assignments</h1><h1 id="Final-Examinations"><a href="#Final-Examinations" class="headerlink" title="Final Examinations"></a>Final Examinations</h1><h1 id="PE-Class"><a href="#PE-Class" class="headerlink" title="PE Class"></a>PE Class</h1><h1 id="Holidays"><a href="#Holidays" class="headerlink" title="Holidays"></a>Holidays</h1><p><em>TBD…</em></p>
+<p><strong>友情链接</strong><br>[世靖的码场]: <a href="https://blog.csdn.net/qdbszsj/article/details/54232990" target="_blank" rel="noopener">https://blog.csdn.net/qdbszsj/article/details/54232990</a><br>[Neo33的博客]: <a href="https://blog.csdn.net/Neo33/article/details/79441289" target="_blank" rel="noopener">https://blog.csdn.net/Neo33/article/details/79441289</a><br>[HKU MSc in Computer Science 1.14深圳面试]: <a href="http://bbs.gter.net/thread-2146075-1-1.html" target="_blank" rel="noopener">http://bbs.gter.net/thread-2146075-1-1.html</a><br>[寄托天下offer榜 - TaylorLiang]: <a href="http://bbs.gter.net/thread-2145695-1-1.html" target="_blank" rel="noopener">http://bbs.gter.net/thread-2145695-1-1.html</a><br>[知乎 - 港校 MSc in CS TELE IE 等找工作的问题]: <a href="https://www.zhihu.com/question/30733152" target="_blank" rel="noopener">https://www.zhihu.com/question/30733152</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          
+            <a href="/tags/hkucs/" rel="tag"># hkucs</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/06/20190106diary/" rel="next" title="博客视频链接已失效">
+                <i class="fa fa-chevron-left"></i> 博客视频链接已失效
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/22/ssh-connection/" rel="prev" title="Connect to Your Virtual Machine with ssh">
+                Connect to Your Virtual Machine with ssh <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTU5Ny84MTYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Taylor Liang" />
+            
+              <p class="site-author-name" itemprop="name">Taylor Liang</p>
+              <p class="site-description motion-element" itemprop="description">生命不息，折腾不止</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Courses"><span class="nav-number">1.</span> <span class="nav-text">Courses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-mining"><span class="nav-number">1.1.</span> <span class="nav-text">Data mining</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smart-phone-apps-development"><span class="nav-number">1.2.</span> <span class="nav-text">Smart phone apps development</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reverse-engineering-and-malware-analysis"><span class="nav-number">1.3.</span> <span class="nav-text">Reverse engineering and malware analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computational-intelligence-and-machine-learning"><span class="nav-number">1.4.</span> <span class="nav-text">Computational intelligence and machine learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Assignments"><span class="nav-number">2.</span> <span class="nav-text">Assignments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Examinations"><span class="nav-number">3.</span> <span class="nav-text">Final Examinations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PE-Class"><span class="nav-number">4.</span> <span class="nav-text">PE Class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Holidays"><span class="nav-number">5.</span> <span class="nav-text">Holidays</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Taylor Liang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12548,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+
+  <!-- 页面背景图 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+  <script>
+    $("body").backstretch("http://taylorliang.top/images/background4.jpg");
+  </script>
+</body>
+</html>
