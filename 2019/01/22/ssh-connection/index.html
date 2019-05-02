@@ -88,7 +88,7 @@
 <meta property="og:description" content="Linux/Unix are built to be used in multi-user environments where several users are logged in to the same machine at the same time. To make work more efficient, we offen connect with our linux machine">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/01/22/ssh-connection/1.jpeg">
-<meta property="og:updated_time" content="2019-01-22T04:45:48.577Z">
+<meta property="og:updated_time" content="2019-01-22T05:02:59.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Connect to Your Virtual Machine with ssh">
 <meta name="twitter:description" content="Linux/Unix are built to be used in multi-user environments where several users are logged in to the same machine at the same time. To make work more efficient, we offen connect with our linux machine">
@@ -310,7 +310,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-22T12:45:48+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-22T13:02:59+08:00">
                 2019-01-22
               </time>
             
@@ -357,7 +357,7 @@
 <h1 id="Install-openssh-server"><a href="#Install-openssh-server" class="headerlink" title="Install openssh-server"></a>Install openssh-server</h1><p>Before installing openssh-server, you can also update your apt-get using command <code>sudo apt-get update</code>.<br>Then install openssh-server with <code>sudo apt-get install openssh-server</code></p>
 <h1 id="Allow-port-22-in-ufw"><a href="#Allow-port-22-in-ufw" class="headerlink" title="Allow port 22 in ufw"></a>Allow port 22 in ufw</h1><p><code>sudo ufw allow 22</code><br>Check if port 22 has been used for sshd by command <code>sudo ufw verbose</code>. If so, the status should be ‘active’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Status: active</span><br><span class="line"></span><br><span class="line">To                         Action      From</span><br><span class="line">--                         ------      ----</span><br><span class="line">22                         ALLOW       Anywhere                  </span><br><span class="line">22 (v6)                    ALLOW       Anywhere (v6)</span><br></pre></td></tr></table></figure></p>
 <p>If you get ‘Status: inactive’, try to enable your ufw by typing <code>sudo ufw enable</code>.</p>
-<h1 id="Connect-with-ssh"><a href="#Connect-with-ssh" class="headerlink" title="Connect with ssh"></a>Connect with ssh</h1><p>Here comes to the final goal. Use command <code>ssh -p 2222 taylor@127.0.0.1</code>.</p>
+<h1 id="Connect-with-ssh"><a href="#Connect-with-ssh" class="headerlink" title="Connect with ssh"></a>Connect with ssh</h1><p>Here comes to the final goal. Use command <code>ssh -p 2222 taylor@127.0.0.1</code>. Please notice that <code>taylor</code> is my username of my linux machine, you should replace by our own username.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &apos;[127.0.0.1]:2222 ([127.0.0.1]:2222)&apos; can&apos;t be established.</span><br><span class="line">ECDSA key fingerprint is SHA256:KhLmGgmnjhncCiI2ZpRC/jXG2ygMajTyMr2e8DMicxE.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br></pre></td></tr></table></figure>
 <p>For the first-time connection, you will be asked if you want to continue connecting or not, of course we should say ‘yes’. Then you will be asked for password, just type in the password, and then you are good to go.</p>
 <p>After finishing your job on your linux machine, you can type <code>exit</code> to logout.</p>
