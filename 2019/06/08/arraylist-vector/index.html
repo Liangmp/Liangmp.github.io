@@ -82,14 +82,14 @@
 <meta name="description" content="Java’s collection framework is incredibly useful. Some commonly used collections are ArrayList, Vector, LinkedList, HashMap, and so on. ArrayList is a dynamically resizing array, which grows as you in">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vector VS ArrayList in Java">
+<meta property="og:title" content="Vector vs ArrayList in Java">
 <meta property="og:url" content="http://yoursite.com/2019/06/08/arraylist-vector/index.html">
 <meta property="og:site_name" content="TaylorLiang&#39;s Blog">
 <meta property="og:description" content="Java’s collection framework is incredibly useful. Some commonly used collections are ArrayList, Vector, LinkedList, HashMap, and so on. ArrayList is a dynamically resizing array, which grows as you in">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-08T10:25:04.403Z">
+<meta property="og:updated_time" content="2019-06-08T10:39:01.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vector VS ArrayList in Java">
+<meta name="twitter:title" content="Vector vs ArrayList in Java">
 <meta name="twitter:description" content="Java’s collection framework is incredibly useful. Some commonly used collections are ArrayList, Vector, LinkedList, HashMap, and so on. ArrayList is a dynamically resizing array, which grows as you in">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Vector VS ArrayList in Java | TaylorLiang's Blog</title>
+  <title>Vector vs ArrayList in Java | TaylorLiang's Blog</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Vector VS ArrayList in Java</h2>
+          <h2 class="post-title" itemprop="name headline">Vector vs ArrayList in Java</h2>
         
 
         <div class="post-meta">
@@ -308,7 +308,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-08T18:25:04+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-06-08T18:39:01+08:00">
                 2019-06-08
               </time>
             
@@ -367,7 +367,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// new an ArrayList</span></span><br><span class="line">        ArrayList&lt;String&gt; myArr = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        myArr.add(<span class="string">"one"</span>);</span><br><span class="line">        myArr.add(<span class="string">"two"</span>);</span><br><span class="line">        myArr.add(<span class="string">"three"</span>);</span><br><span class="line">        myArr.add(<span class="string">"four"</span>);</span><br><span class="line">        myArr.add(<span class="string">"five"</span>);</span><br><span class="line">        <span class="comment">// traversing using iterator</span></span><br><span class="line">        Iterator it = myArr.iterator();</span><br><span class="line">        System.out.println(<span class="string">"### Traversing ArrayList using Iterator:"</span>);</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">            System.out.println(it.next());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// new a Vector</span></span><br><span class="line">        Vector&lt;String&gt; myVec = <span class="keyword">new</span> Vector&lt;&gt;();</span><br><span class="line">        myVec.add(<span class="string">"piano"</span>);</span><br><span class="line">        myVec.add(<span class="string">"guitar"</span>);</span><br><span class="line">        myVec.add(<span class="string">"violin"</span>);</span><br><span class="line">        <span class="comment">// traversing using enumerator</span></span><br><span class="line">        Enumeration enu = myVec.elements();</span><br><span class="line">        System.out.println(<span class="string">"### Traversing Vector using Enumeration:"</span>);</span><br><span class="line">        <span class="keyword">while</span> (enu.hasMoreElements())&#123;</span><br><span class="line">            System.out.println(enu.nextElement());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">### Traversing ArrayList using Iterator:</span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line">three</span><br><span class="line">four</span><br><span class="line">five</span><br><span class="line">### Traversing Vector using Enumeration:</span><br><span class="line">piano</span><br><span class="line">guitar</span><br><span class="line">violin</span><br></pre></td></tr></table></figure></p>
 <p><strong>References</strong></p>
-<p><a href="https://www.geeksforgeeks.org/vector-vs-arraylist-java/" target="_blank" rel="noopener">GeeksforGeeks - Vector vs ArrayList in Java</a><br><a href="www.CrackingTheCodinglnterview.com">Cracking the coding interview 6th</a><br><a href="https://www.geeksforgeeks.org/collections-in-java-2/" target="_blank" rel="noopener">GeeksforGeeks - Collections in Java</a></p>
+<p><a href="https://www.geeksforgeeks.org/vector-vs-arraylist-java/" target="_blank" rel="noopener">GeeksforGeeks - Vector vs ArrayList in Java</a><br><a href="http://www.crackingthecodinginterview.com/" target="_blank" rel="noopener">Cracking the coding interview 6th</a><br><a href="https://www.geeksforgeeks.org/collections-in-java-2/" target="_blank" rel="noopener">GeeksforGeeks - Collections in Java</a></p>
 
       
     </div>
@@ -499,7 +499,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -521,7 +521,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
