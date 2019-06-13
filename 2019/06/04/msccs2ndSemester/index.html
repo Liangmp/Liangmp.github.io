@@ -88,7 +88,8 @@
 <meta property="og:description" content="趁短暂的summer break赶紧写个回顾吧。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/06/04/msccs2ndSemester/1.jpg">
-<meta property="og:updated_time" content="2019-06-08T09:39:41.101Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/04/msccs2ndSemester/2.jpg">
+<meta property="og:updated_time" content="2019-06-13T19:50:19.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My Second Semester in HKU">
 <meta name="twitter:description" content="趁短暂的summer break赶紧写个回顾吧。">
@@ -310,8 +311,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-08T17:39:41+08:00">
-                2019-06-08
+              <time title="Post modified" itemprop="dateModified" datetime="2019-06-14T03:50:19+08:00">
+                2019-06-14
               </time>
             
           </span>
@@ -373,8 +374,49 @@
       
         <p><img src="/2019/06/04/msccs2ndSemester/1.jpg" alt=""><br>趁短暂的summer break赶紧写个回顾吧。<br><a id="more"></a></p>
 <p>有了第一个学期的经验，这学期对于assignment和group project的应付相对自如。这学期选的课都比较硬核，除了visualization and visual analysis比较水之外。本来选了五门课的，但是user interface design上完第一次课就机智地drop了，这是一门文科性质的课，一堆阅读材料，要写很多文字。</p>
-<h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><h2 id="Cluster-and-Cloud-Computing"><a href="#Cluster-and-Cloud-Computing" class="headerlink" title="Cluster and Cloud Computing"></a>Cluster and Cloud Computing</h2><h2 id="Visualization-and-Visual"><a href="#Visualization-and-Visual" class="headerlink" title="Visualization and Visual"></a>Visualization and Visual</h2><p>主要讲数据可视化以及可视化的工具，非常简单，几乎啥都没学到，要不是没其他课的可选我肯定会退掉这门。</p>
-<h2 id="Advanced-Database-Management"><a href="#Advanced-Database-Management" class="headerlink" title="Advanced Database Management"></a>Advanced Database Management</h2><p>很多同学选这门课是为了蹭个学分，并且悠闲地写sql语句做增删改查，结果谁也没想到这门课真如课程名称一样advanced。</p>
+<h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><h2 id="Cluster-and-Cloud-Computing"><a href="#Cluster-and-Cloud-Computing" class="headerlink" title="Cluster and Cloud Computing"></a>Cluster and Cloud Computing</h2><h2 id="Visualization-and-Visual"><a href="#Visualization-and-Visual" class="headerlink" title="Visualization and Visual"></a>Visualization and Visual</h2><p>主要讲数据可视化以及可视化的工具，非常简单，几乎啥都没学到，要不是没其他课的可选我肯定会退掉这门。由于太水，我敲掉了好多次课和lab。又由于过于不重视这门课，我们group这门课的final project居然是集体通宵一个晚上做完的，还被CS lab罚了quota(we violated a rule in the lab)。Anyway，这是我们group通宵一个晚上的成果：<br><a href="https://i.cs.hku.hk/~mpliang/comp7507_project_website/index.html" target="_blank" rel="noopener">https://i.cs.hku.hk/~mpliang/comp7507_project_website/index.html</a></p>
+<h2 id="Advanced-Database-Management"><a href="#Advanced-Database-Management" class="headerlink" title="Advanced Database Management"></a>Advanced Database Management</h2><p>很多同学选这门课是为了蹭个学分，并且悠闲地写sql语句做增删改查，结果谁也没想到这门课真如课程名称一样advanced。相信大家上完第一节课都有跟我一样的感受，怎么一个introduction能讲这么多东西？事实上这个intro就是这门课所涵盖的内容，包括：</p>
+<ol>
+<li>Data storage<ul>
+<li>Disk and disk management</li>
+<li>files, pages, records</li>
+<li>file management (heap file, sorted file and their cost of operations)</li>
+<li><img src="/2019/06/04/msccs2ndSemester/2.jpg" alt=""></li>
+</ul>
+</li>
+<li>Tree indexes<ul>
+<li>ISAM(Indexed Sequential Access Method)</li>
+<li>B+ tree</li>
+<li>Clustered and unclustered indexes</li>
+</ul>
+</li>
+<li>Buffer management<ul>
+<li>Handling dirty pages</li>
+<li>Page replacement policy<ul>
+<li>LRU (Least-recently-used, may cause “sequential flooding” in some scenario)</li>
+<li>MRU (Most-recently-used, good for repeated scan)</li>
+<li>Clock policy (a simplify version of LRU)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sorting and hashing (I have to say that is part is very hard)<ul>
+<li>Out-of-core algorithms (sort 100GB of data with 1GB of RAM)</li>
+<li>Sorting: conquer and merge</li>
+<li>Hashing: divide and conquer</li>
+</ul>
+</li>
+<li>Relational algebra</li>
+<li>Interators joins</li>
+<li>Query optimization</li>
+<li>Concurrency control and transactions</li>
+<li>Crash recovery</li>
+<li>Parallel DBMS</li>
+<li>NoSQL</li>
+<li>BDMS (Big Data Management System)</li>
+<li>Column oriented DBMS (Not discussed this year due to time limitation)</li>
+</ol>
+<p><strong>You might also be interested in:</strong><br><a href="http://taylorliang.top/2019/01/07/msccs1stSemester/" target="_blank" rel="noopener">HKU MScCS First Semester 回顾</a></p>
 
       
     </div>
