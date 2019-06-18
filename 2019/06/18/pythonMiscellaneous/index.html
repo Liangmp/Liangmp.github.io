@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="TaylorLiang&#39;s Blog">
 <meta property="og:description" content="Sometimes it is veird to encounter with python test or quiz that ask you the environmental variables in python. Because most of the time when we are coding in python, we don’t actually care too much a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-18T15:55:39.928Z">
+<meta property="og:updated_time" content="2019-06-18T17:15:50.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Miscellaneous 1 - PYTHONHOME PYTHONPATH PYTHONSTARTUP and PYTHONCASEOK">
 <meta name="twitter:description" content="Sometimes it is veird to encounter with python test or quiz that ask you the environmental variables in python. Because most of the time when we are coding in python, we don’t actually care too much a">
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-18T23:55:39+08:00">
-                2019-06-18
+              <time title="Post modified" itemprop="dateModified" datetime="2019-06-19T01:15:50+08:00">
+                2019-06-19
               </time>
             
           </span>
@@ -383,13 +383,13 @@
 </li>
 </ol>
 <p>Well, the third one is easy. We can choose the correct answer just by guessing - case-insensitive matching? That must be C. PYTHONCASEOK. Congratulations, you hit the correct answer. But how about the other three questions? It’s hard by random guess. Let’s go and read the <a href="https://docs.python.org/2/using/cmdline.html" target="_blank" rel="noopener">python document</a>:</p>
-<div class="note"><p><b>PYTHONHOME</b><br><br>Change the location of the standard Python libraries. By default, the libraries are searched in prefix/lib/pythonversion and exec_prefix/lib/pythonversion, where prefix and exec_prefix are installation-dependent directories, both defaulting to /usr/local.<br><br><br>When PYTHONHOME is set to a single directory, its value replaces both prefix and exec_prefix. To specify different values for these, set PYTHONHOME to prefix:exec_prefix.</p></div>
+<div class="note success"><p><b>PYTHONHOME</b><br><br>Change the location of the standard Python libraries. By default, the libraries are searched in prefix/lib/pythonversion and exec_prefix/lib/pythonversion, where prefix and exec_prefix are installation-dependent directories, both defaulting to /usr/local.<br><br><br>When PYTHONHOME is set to a single directory, its value replaces both prefix and exec_prefix. To specify different values for these, set PYTHONHOME to prefix:exec_prefix.</p></div>
 
-<div class="note"><p><b>PYTHONPATH</b><br><br>Augment the default search path for module files. The format is the same as the shell’s PATH: one or more directory pathnames separated by os.pathsep (e.g. colons on Unix or semicolons on Windows). Non-existent directories are silently ignored.<br><br><br>In addition to normal directories, individual PYTHONPATH entries may refer to zipfiles containing pure Python modules (in either source or compiled form). Extension modules cannot be imported from zipfiles.<br><br>The default search path is installation dependent, but generally begins with prefix/lib/pythonversion (see PYTHONHOME above). It is always appended to PYTHONPATH.<br><br>An additional directory will be inserted in the search path in front of PYTHONPATH as described above under Interface options. The search path can be manipulated from within a Python program as the variable sys.path.</p></div>
+<div class="note success"><p><b>PYTHONPATH</b><br><br>Augment the default search path for module files. The format is the same as the shell’s PATH: one or more directory pathnames separated by os.pathsep (e.g. colons on Unix or semicolons on Windows). Non-existent directories are silently ignored.<br><br><br>In addition to normal directories, individual PYTHONPATH entries may refer to zipfiles containing pure Python modules (in either source or compiled form). Extension modules cannot be imported from zipfiles.<br><br>The default search path is installation dependent, but generally begins with prefix/lib/pythonversion (see PYTHONHOME above). It is always appended to PYTHONPATH.<br><br>An additional directory will be inserted in the search path in front of PYTHONPATH as described above under Interface options. The search path can be manipulated from within a Python program as the variable sys.path.</p></div>
 
-<div class="note"><p><b>PYTHONSTARTUP</b><br><br>If this is the name of a readable file, the Python commands in that file are executed before the first prompt is displayed in interactive mode. The file is executed in the same namespace where interactive commands are executed so that objects defined or imported in it can be used without qualification in the interactive session. You can also change the prompts sys.ps1 and sys.ps2 in this file.</p></div>
+<div class="note success"><p><b>PYTHONSTARTUP</b><br><br>If this is the name of a readable file, the Python commands in that file are executed before the first prompt is displayed in interactive mode. The file is executed in the same namespace where interactive commands are executed so that objects defined or imported in it can be used without qualification in the interactive session. You can also change the prompts sys.ps1 and sys.ps2 in this file.</p></div>
 
-<div class="note"><p><b>PYTHONCASEOK</b><br><br>CIf this is set, Python ignores case in import statements. This only works on Windows, OS X, OS/2, and RiscOS.</p></div>
+<div class="note success"><p><b>PYTHONCASEOK</b><br><br>CIf this is set, Python ignores case in import statements. This only works on Windows, OS X, OS/2, and RiscOS.</p></div>
 
 <p>To sum up, PYTHONHOME is an alternative module/library search path. PYTHONPATH is to tell the Python interpreter where to locate the module files imported into a program. PYTHONSTARTUP is the path of an initialization file containing Python source code. PYTHONCASEOK is to set it into case-insensitive.</p>
 <p>So the correct answers for the above questions are <strong>A B C D</strong>. Can you get them right?</p>
