@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Quiz," />
+  <meta name="keywords" content="Python,Interveiw,DataStructure," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="Question: On old cell phones,users typed on a numeric keypad and the phone would provide a list of words that matched these numbers. Each digit mapped to a set of 0 - 4 letters. Implement an algorithm">
-<meta name="keywords" content="Quiz">
+<meta name="description" content="For tree traversal, there are Depth First Traversal and Breath First Traversal. In this post, we will focus only on Depth Frist Traversal.">
+<meta name="keywords" content="Python,Interveiw,DataStructure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Quiz - T9">
-<meta property="og:url" content="http://yoursite.com/2019/06/08/quiz-t9/index.html">
+<meta property="og:title" content="Tree Traversals - Inorder, Preorder and Postorder">
+<meta property="og:url" content="http://yoursite.com/2019/09/14/treeTraversals_DepthFirst/index.html">
 <meta property="og:site_name" content="TaylorLiang&#39;s Blog">
-<meta property="og:description" content="Question: On old cell phones,users typed on a numeric keypad and the phone would provide a list of words that matched these numbers. Each digit mapped to a set of 0 - 4 letters. Implement an algorithm">
+<meta property="og:description" content="For tree traversal, there are Depth First Traversal and Breath First Traversal. In this post, we will focus only on Depth Frist Traversal.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/06/08/quiz-t9/1.jpg">
-<meta property="og:updated_time" content="2019-06-13T19:58:19.306Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/14/treeTraversals_DepthFirst/tree12.gif">
+<meta property="og:updated_time" content="2019-09-14T17:00:16.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quiz - T9">
-<meta name="twitter:description" content="Question: On old cell phones,users typed on a numeric keypad and the phone would provide a list of words that matched these numbers. Each digit mapped to a set of 0 - 4 letters. Implement an algorithm">
-<meta name="twitter:image" content="http://yoursite.com/2019/06/08/quiz-t9/1.jpg">
+<meta name="twitter:title" content="Tree Traversals - Inorder, Preorder and Postorder">
+<meta name="twitter:description" content="For tree traversal, there are Depth First Traversal and Breath First Traversal. In this post, we will focus only on Depth Frist Traversal.">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/14/treeTraversals_DepthFirst/tree12.gif">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/08/quiz-t9/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/14/treeTraversals_DepthFirst/"/>
 
 
 
 
 
-  <title>Quiz - T9 | TaylorLiang's Blog</title>
+  <title>Tree Traversals - Inorder, Preorder and Postorder | TaylorLiang's Blog</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/quiz-t9/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/14/treeTraversals_DepthFirst/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Taylor Liang">
@@ -282,7 +282,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Quiz - T9</h2>
+          <h2 class="post-title" itemprop="name headline">Tree Traversals - Inorder, Preorder and Postorder</h2>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-08T23:09:33+08:00">
-                2019-06-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-14T14:46:44+08:00">
+                2019-09-14
               </time>
             
 
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-14T03:58:19+08:00">
-                2019-06-14
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-15T01:00:16+08:00">
+                2019-09-15
               </time>
             
           </span>
@@ -349,31 +349,40 @@
       
 
       
-        <p><strong>Question:</strong> On old cell phones,users typed on a numeric keypad and the phone would provide a list of words that matched these numbers. Each digit mapped to a set of 0 - 4 letters. Implement an algorithm to return a list of matching words, given a sequence of digits. You are provided a list of valid words (provided in whatever data structure you’d like). The mapping is shown in the diagram below:</p>
-<p><img src="/2019/06/08/quiz-t9/1.jpg" alt=""></p>
+        <p>For tree traversal, there are Depth First Traversal and Breath First Traversal. In this post, we will focus only on Depth Frist Traversal. </p>
+<p><img src="/2019/09/14/treeTraversals_DepthFirst/tree12.gif" alt=""></p>
 <a id="more"></a>
-<p>EXAMPLE:<br>Input: 8733<br>Output: tree, used</p>
-<p>(Cracking the coding interview 16.20 T9)</p>
-<p><strong>SOLUTION:</strong></p>
-<h2 id="Brute-Force"><a href="#Brute-Force" class="headerlink" title="Brute Force"></a>Brute Force</h2><p>Imagine how you would solve the problem if you had to do it by hand. You’d probably try every possible value for each digit with all other possible values.</p>
-<p>This is exactly what we do algorithmically.We take the first digit and run through all the characters that map to that digit. For each character, we add it to a prefix variable and recurse, passing the prefix downward. Once we run out of characters, we print prefix (which now contains the full word) if the string is a valid word.</p>
-<p>This is very, very slow on large strings.</p>
-<h2 id="Optimized"><a href="#Optimized" class="headerlink" title="Optimized"></a>Optimized</h2><p>Let’s return to thinking about how you would do this, if you were doing it by hand. Imagine the example of 33835676368 (which corresponds to development).Ifyou were doing this by hand, Ibet you’d skip over solutions that start with fftf [3383]. as no valid words start with those characters.</p>
-<p>Ideally, we’d like our program to make the same sort of optimization: stop recursing down paths which will obviously fail. Specifically, if there are no words in the dictionary that start with prefix, stop recursing.</p>
-<p>The Trie data structure can do this for us. Whenever we reach a string which is not a valid prefix, we exit.</p>
-<p>Runtime is depends on what the language looks like, but this “short-circuiting” will make it run much, much faster in practice.</p>
-<h2 id="Most-Optimal"><a href="#Most-Optimal" class="headerlink" title="Most Optimal"></a>Most Optimal</h2><p>Believe or not, we can actually make it run even faster. We just need to do a little bit of preprocessing. That’s not a big deal though. We were doing that to build the trie anyway.</p>
-<p>This problem is asking us to list all the words represented by a particular number in T9. Instead of trying to do this “on the fly”(and going through a lot of possibilities, many of which won’t actually work), we can just do this in advance.</p>
-<p>Our algorithm now has a few steps:</p>
-<h3 id="Pre-Computation"><a href="#Pre-Computation" class="headerlink" title="Pre-Computation:"></a>Pre-Computation:</h3><ol>
-<li>Create a hash table that maps from a sequence of digits to a list of strings.</li>
-<li>Go throug h each word in the dictionary and convert it to its T9 representation (e.g., APPLE -&gt; 27753). Store each of these in the above hash table. For example, 8733 would map to {used, tree}</li>
+<p>Depth First Traversals:</p>
+<ol>
+<li>Inorder (Left, Root, Right): 4 2 5 1 3</li>
+<li>Preorder (Root, Left, Right): 1 2 4 5 3</li>
+<li>Postorder (Left, Right, Root): 4 5 2 3 1</li>
 </ol>
-<h3 id="Word-Lookup"><a href="#Word-Lookup" class="headerlink" title="Word Lookup:"></a>Word Lookup:</h3><ol>
-<li>Just look up the entry in the hash table and return the list.<br>That’s it!</li>
+<h1 id="1-Inorder-Left-Root-Right"><a href="#1-Inorder-Left-Root-Right" class="headerlink" title="1. Inorder (Left, Root, Right)"></a>1. Inorder (Left, Root, Right)</h1><p>Algorithm Inorder(tree)</p>
+<ol>
+<li>Traverse the left subtree, i.e., call Inorder(left-subtree)</li>
+<li>Visit the root.</li>
+<li>Traverse the right subtree, i.e., call Inorder(right-subtree)</li>
 </ol>
-<p>Note that it’s easy to think, “Oh, linear-that’s not that fast”. But it depends what it’s linear on. Linear on the length of the word is extremely fast. Linear on the length of the dictionary is not so fast.</p>
-<p><strong>Reference:</strong><br><a href="http://www.crackingthecodinginterview.com/" target="_blank" rel="noopener">Cracking the Coding Interview, 6th Edition</a></p>
+<p><strong>Uses of Inorder:</strong><br>In case of binary <strong>search trees (BST)</strong>, Inorder traversal gives nodes in non-decreasing order. To get nodes of BST in non-increasing order, a variation of Inorder traversal where Inorder traversal s reversed can be used.</p>
+<p>Example: Inorder traversal for the above-given figure is 4 2 5 1 3.</p>
+<h1 id="2-Preorder-Root-Left-Right"><a href="#2-Preorder-Root-Left-Right" class="headerlink" title="2. Preorder (Root, Left, Right)"></a>2. Preorder (Root, Left, Right)</h1><p>Algorithm Preorder(tree)</p>
+<ol>
+<li>Visit the root.</li>
+<li>Traverse the left subtree, i.e., call Preorder(left-subtree)</li>
+<li>Traverse the right subtree, i.e., call Preorder(right-subtree)</li>
+</ol>
+<p><strong>Uses of Preorder:</strong><br>Preorder traversal is used to create a copy of the tree. Preorder traversal is also used to get <strong>prefix expression</strong> on of an expression tree. Please see <a href="http://en.wikipedia.org/wiki/Polish_notation" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Polish_notation</a> to know why prefix expressions are useful. You can also read my previous post <a href="http://taylorliang.top/2019/06/08/infix-prefix-postfix/" target="_blank" rel="noopener">Infix, Prefix, and Postfix Expressions 中缀前缀后缀表达式</a> for reference.</p>
+<p>Example: Preorder traversal for the above given figure is 1 2 4 5 3.</p>
+<h1 id="3-Postorder-Left-Right-Root"><a href="#3-Postorder-Left-Right-Root" class="headerlink" title="3. Postorder (Left, Right, Root)"></a>3. Postorder (Left, Right, Root)</h1><p>Alogrithm Postorder(tree)</p>
+<pre><code>1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+3. Visit the root.
+</code></pre><p><strong>Uses of Postorder:</strong><br>Postorder traversal is used to delete a tree. Postorder traversal is also useful to get the postfix expression of an expression tree. Please see <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Reverse_Polish_notation</a> to for the usage of postfix expression. You can also read my previous post <a href="http://taylorliang.top/2019/06/08/infix-prefix-postfix/" target="_blank" rel="noopener">Infix, Prefix, and Postfix Expressions 中缀前缀后缀表达式</a> for reference.</p>
+<p>Example: Postorder traversal for the above given figure is 4 5 2 3 1.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printInorder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root:</span><br><span class="line">        printInorder(root.left)  <span class="comment"># first recur on left child</span></span><br><span class="line">        print(root.val)          <span class="comment"># then print the value of current node</span></span><br><span class="line">        printInorder(root.right) <span class="comment"># finaly, recur on right child</span></span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printPreorder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root:</span><br><span class="line">        print(root.val)</span><br><span class="line">        printPreorder(root.left)</span><br><span class="line">        printPreorder(root.right)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printPostorder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root:</span><br><span class="line">        printPostorder(root.left)</span><br><span class="line">        printPostorder(root.right)</span><br><span class="line">        print(root.val)</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Build a tree like this:</span></span><br><span class="line"><span class="string">            1</span></span><br><span class="line"><span class="string">           / \</span></span><br><span class="line"><span class="string">          2   3</span></span><br><span class="line"><span class="string">         / \</span></span><br><span class="line"><span class="string">        4   5</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">root = Node(<span class="number">1</span>)</span><br><span class="line">root.left = Node(<span class="number">2</span>)</span><br><span class="line">root.right = Node(<span class="number">3</span>)</span><br><span class="line">root.left.left = Node(<span class="number">4</span>)</span><br><span class="line">root.left.right = Node(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Inorder:"</span>)</span><br><span class="line">printInorder(root)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Preorder:"</span>)</span><br><span class="line">printPreorder(root)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Postorder:"</span>)</span><br><span class="line">printPostorder(root)</span><br></pre></td></tr></table></figure>
+<p><strong>Time Complexity:</strong> O(n)</p>
+<p><strong>References:</strong><br><a href="https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/" target="_blank" rel="noopener">Tree Traversals (Inorder, Preorder and Postorder)</a></p>
 
       
     </div>
@@ -391,7 +400,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Quiz/" rel="tag"># Quiz</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Interveiw/" rel="tag"># Interveiw</a>
+          
+            <a href="/tags/DataStructure/" rel="tag"># DataStructure</a>
           
         </div>
       
@@ -416,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/08/quiz-number-swapper/" rel="next" title="Quiz - Number Swapper">
-                <i class="fa fa-chevron-left"></i> Quiz - Number Swapper
+              <a href="/2019/06/20/static-keyword-in-java/" rel="next" title="Static Keyword in Java">
+                <i class="fa fa-chevron-left"></i> Static Keyword in Java
               </a>
             
           </div>
@@ -426,8 +439,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/16/basicDataTypesJava/" rel="prev" title="Basic Data Types in Java">
-                Basic Data Types in Java <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/15/treeTraversals_BreadthFirst/" rel="prev" title="Level Order Tree Traversal - Breadth First Traversal">
+                Level Order Tree Traversal - Breadth First Traversal <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -569,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Brute-Force"><span class="nav-number">1.</span> <span class="nav-text">Brute Force</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimized"><span class="nav-number">2.</span> <span class="nav-text">Optimized</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Most-Optimal"><span class="nav-number">3.</span> <span class="nav-text">Most Optimal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-Computation"><span class="nav-number">3.1.</span> <span class="nav-text">Pre-Computation:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Word-Lookup"><span class="nav-number">3.2.</span> <span class="nav-text">Word Lookup:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Inorder-Left-Root-Right"><span class="nav-number">1.</span> <span class="nav-text">1. Inorder (Left, Root, Right)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Preorder-Root-Left-Right"><span class="nav-number">2.</span> <span class="nav-text">2. Preorder (Root, Left, Right)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Postorder-Left-Right-Root"><span class="nav-number">3.</span> <span class="nav-text">3. Postorder (Left, Right, Root)</span></a></li></ol></div>
             
 
           </div>
