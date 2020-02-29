@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="linux,vim," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linux is an operating system or a kernel. It is distributed under an open source license. Its functionality list is quite like UNIX. Linux is a clone of UNIX. The commands used on both the operating s">
+<meta name="keywords" content="linux,vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Note">
+<meta property="og:url" content="http://yoursite.com/2020/03/01/linux-note/index.html">
+<meta property="og:site_name" content="TaylorLiang&#39;s Blog">
+<meta property="og:description" content="Linux is an operating system or a kernel. It is distributed under an open source license. Its functionality list is quite like UNIX. Linux is a clone of UNIX. The commands used on both the operating s">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-29T19:12:48.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux Note">
+<meta name="twitter:description" content="Linux is an operating system or a kernel. It is distributed under an open source license. Its functionality list is quite like UNIX. Linux is a clone of UNIX. The commands used on both the operating s">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/01/linux-note/"/>
+
+
+
+
+
+  <title>Linux Note | TaylorLiang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TaylorLiang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/linux-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Taylor Liang">
+      <meta itemprop="description" content="生命不息，折腾不止">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TaylorLiang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Linux Note</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-01T03:10:17+08:00">
+                2020-03-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-01T03:12:48+08:00">
+                2020-03-01
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Linux is an operating system or a kernel. It is distributed under an open source license. Its functionality list is quite like UNIX. Linux is a clone of UNIX. The commands used on both the operating systems are usually the same. So learning one is same as learning another.</p>
+<p>Here is the story, if you are interested in stories. Back in the 1990s (maybe a few years earlier), a computer science master student <strong>Linus Torvalds</strong> thought that the UNXI OS needed to be improved. After his suggestion was rejected by the designers of UNXI, he thought of launching an OS which will be receptive to changes, modifications suggested by its users. Linus Torvalds named the new kernel Linux, and the first release was in March 1991. Now, Linux is one of the most popular and widely used Kernel, and it is the backbone of popular operating systems like Debian, Knoppix, Ubuntu, and Fedora. The main advantage of Linux was that programmers were able to use the Linux Kernel to design their own custom operating systems.</p>
+<p>Do you know that Linus Torvalds is also the original auther of the famous distributed version control system <strong>Git</strong>? When being ask why the name “git”, “Git in British slang means ‘a rotten person’,”he said, “I’m an egotistical bastard, so I name all my projects after myself. First Linux, now git.” <a id="more"></a></p>
+<h2 id="download-centos-7-minimal"><a href="#download-centos-7-minimal" class="headerlink" title="download centos 7 minimal"></a>download centos 7 minimal</h2><p><a href="http://isoredirect.centos.org/centos/7/isos/x86_64" target="_blank" rel="noopener">http://isoredirect.centos.org/centos/7/isos/x86_64</a><br><a href="http://centos.nethub.com.hk/7.7.1908/isos/x86_64/" target="_blank" rel="noopener">http://centos.nethub.com.hk/7.7.1908/isos/x86_64/</a><br>download this one:<br><strong>CentOS-7-x86_64-Minimal-1908.iso</strong></p>
+<h2 id="static-checking"><a href="#static-checking" class="headerlink" title="static checking"></a>static checking</h2><p>Check current user:<br>$ whoami</p>
+<p>Check current working directory:<br>$ pwd</p>
+<p>List files:<br>$ ls</p>
+<p>List all files including hidden files:<br>$ ls -a</p>
+<p>Check disk usage:<br>$ df<br>$ df -h</p>
+<h2 id="differences-among-yum-rpm-pip-apt-apt-get"><a href="#differences-among-yum-rpm-pip-apt-apt-get" class="headerlink" title="differences among yum, rpm, pip, apt, apt-get"></a>differences among yum, rpm, pip, apt, apt-get</h2><p>YUM: Yellowdog Updater Modified, an open source command-line, and a graphical based package management tool for RPM (RedHat Package Manager) based Linux systems. It allows users and system administrator to easily install, update, remove or search software packages on a systems.<br>ref: <a href="https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/" target="_blank" rel="noopener">20 Linux YUM (Yellowdog Updater, Modified) Commands for Package Management</a><br><a href="https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf" target="_blank" rel="noopener">YUM COMMAND CHEAT SHEET</a></p>
+<p>RPM: RedHat Package manager, an default open source and most popular package management utility for Red Hat based systems like (RHEL, CentOS and Fedora).</p>
+<p>pip: pip is the package installer for python.</p>
+<p>apt: a command-line utility for installing, updating, removing and otherwise managing deb packages on Ubuntu, Debian, and related Linux distributions. It combines the most frequently used commands from the apt-get and apt-cache tools with different default values of some options.</p>
+<h2 id="The-powerful-editor-vim"><a href="#The-powerful-editor-vim" class="headerlink" title="The powerful editor: vim"></a>The powerful editor: vim</h2><p>Move left, right, up, down:<br>j  // down<br>k  // up<br>h  // left<br>l  // down</p>
+<p>Move to start/end of line:<br>$  // end of line<br>0  // (zero) start of line</p>
+<p>Insert mode:<br>i  // insert<br>a  // append<br>o  // open (append) blank line below current line (no need to press return)<br>O  // open blank line above current line<br>esc // exit insert mode</p>
+<p>x  // delete charactor<br>d  // delte a word<br>dd // delete current line<br>yy // yank(copy) a line<br>p  // put (paste) the clipboard after cursor<br>P  // put (paste) before c</p>
+<p>See <a href="https://stackoverflow.com/questions/16757516/why-yank-is-the-meaning-of-copy-in-vim" target="_blank" rel="noopener">Why yank is the meaning of copy in vim - stackoverflow</a></p>
+<p>:w    // write (save) the file, but don’t exit<br>:wq    // write (save) and quit<br>:q    // quit (fails if anything has changed)<br>:q!    // quit and throw away changes</p>
+<p>/pattern   // search for pattern<br>?pattern   // search backward for pattern<br>n           // repeat search in same direction<br>N           // repeat search in opposite direction<br>:%s/old/new/g    // replace all old with new throughout file<br>:%s/old/new/gc    // replace all old with new throughout file with confirmations</p>
+<p>See <a href="https://www.keyxl.com/" target="_blank" rel="noopener">VIM Keyboard Shortcuts - keyxl.com</a> for more.</p>
+<p>Ref:<br><a href="https://www.vultr.com/docs/choosing-an-os-centos-ubuntu-debian-freebsd-coreos-or-windows-server" target="_blank" rel="noopener">Choosing an OS: CentOS, Ubuntu, Debian, FreeBSD, CoreOS, or Windows Server</a><br><a href="https://www.guru99.com/introduction-linux.html" target="_blank" rel="noopener">Introduction to the Linux Operating System</a><br>[Linus Torvalds - Wikipedia]<a href="https://en.wikipedia.org/wiki/Linus_Torvalds" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Linus_Torvalds</a><br><a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="noopener">Git - Wikipedia</a><br><a href="https://www.pcworld.idg.com.au/article/129776/after_controversy_torvalds_begins_work_git_/" target="_blank" rel="noopener">After controversy, Torvalds begins work on “git”</a><br><a href="https://www.keyxl.com/" target="_blank" rel="noopener">VIM Keyboard Shortcuts - keyxl.com</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/vim/" rel="tag"># vim</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/11/taylorSwiftChordProgression/" rel="next" title="Taylor Swift Chord Progression Analysis">
+                <i class="fa fa-chevron-left"></i> Taylor Swift Chord Progression Analysis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTU5Ny84MTYx"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Taylor Liang" />
+            
+              <p class="site-author-name" itemprop="name">Taylor Liang</p>
+              <p class="site-description motion-element" itemprop="description">生命不息，折腾不止</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#download-centos-7-minimal"><span class="nav-number">1.</span> <span class="nav-text">download centos 7 minimal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static-checking"><span class="nav-number">2.</span> <span class="nav-text">static checking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differences-among-yum-rpm-pip-apt-apt-get"><span class="nav-number">3.</span> <span class="nav-text">differences among yum, rpm, pip, apt, apt-get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-powerful-editor-vim"><span class="nav-number">4.</span> <span class="nav-text">The powerful editor: vim</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Taylor Liang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12548,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+
+  <!-- 页面背景图 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+  <script>
+    $("body").backstretch("http://taylorliang.top/images/background4.jpg");
+  </script>
+</body>
+</html>
