@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="TaylorLiang&#39;s Blog">
 <meta property="og:description" content="drop,delete和truncate都是删除命令，但是用起来有很大差别，drop用于删除表，delete用于删除表中的某一行或多行，truncate用于清空表格中的数据。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-19T16:06:48.000Z">
+<meta property="og:updated_time" content="2020-04-15T16:05:07.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库删除语句Drop, Delete和Truncate的区别">
 <meta name="twitter:description" content="drop,delete和truncate都是删除命令，但是用起来有很大差别，drop用于删除表，delete用于删除表中的某一行或多行，truncate用于清空表格中的数据。">
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2017-11-20T00:06:48+08:00">
-                2017-11-20
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-16T00:05:07+08:00">
+                2020-04-16
               </time>
             
           </span>
@@ -374,6 +374,7 @@
 <h2 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h2><p>delete用于删除表中的某一行或多行<br>语法：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 删除某一行</span></span><br><span class="line"><span class="keyword">Delete</span> <span class="keyword">From</span> 表名称  <span class="keyword">Where</span> 列名称=值</span><br><span class="line"><span class="comment">-- 删除某一行</span></span><br><span class="line"><span class="keyword">Delete</span> <span class="keyword">From</span> 表名称  <span class="keyword">Where</span> 列名称=值</span><br><span class="line"><span class="comment">-- 或     </span></span><br><span class="line"><span class="keyword">Delete</span> *  <span class="keyword">From</span>  表名称</span><br></pre></td></tr></table></figure></p>
 <h2 id="Truncate"><a href="#Truncate" class="headerlink" title="Truncate"></a>Truncate</h2><p>truncate用于清空表格中的数据，保留表格的结构、属性和索引等。<br>语法：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">Table</span> 表格名称</span><br></pre></td></tr></table></figure></p>
 <p>truncate的用法有点类似于<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 复制tableA的表格结构到tableB，但是不复制tableA里面的数据</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> tableB <span class="keyword">from</span> tableA <span class="keyword">where</span> <span class="number">1</span> = <span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
+<p>(Updated on 16 April, 2020)<br>使用delete刪除數據是會被寫進log的，所以可以callback。當delete一個有很多條record的表格時，小心log被寫爆（俗稱爆碟）。<br>一般來說清空表格數據會用truncate而不是delete。Truncate不會寫進log，不能callback。</p>
 
       
     </div>
@@ -514,7 +515,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -536,7 +537,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
